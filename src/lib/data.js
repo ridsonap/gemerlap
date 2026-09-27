@@ -5,10 +5,12 @@ export const fmtPct = (v) =>
   v == null || Number.isNaN(v) ? '–' : (v * 100).toLocaleString('id-ID', { maximumFractionDigits: 1 }) + '%';
 
 export async function loadData() {
+  const base = import.meta.env.BASE_URL || '/';
+  const cleanBase = base.endsWith('/') ? base : base + '/';
   const [desa, kec, stats] = await Promise.all([
-    fetch('data/desa.geojson').then((r) => r.json()),
-    fetch('data/kecamatan.geojson').then((r) => r.json()),
-    fetch('data/stats.json').then((r) => r.json()),
+    fetch(`${cleanBase}data/desa.geojson`).then((r) => r.json()),
+    fetch(`${cleanBase}data/kecamatan.geojson`).then((r) => r.json()),
+    fetch(`${cleanBase}data/stats.json`).then((r) => r.json()),
   ]);
   return { desa, kec, stats };
 }
