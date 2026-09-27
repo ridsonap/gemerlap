@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { @apply bg-stone-100 text-stone-800 antialiased selection:bg-emerald-100 selection:text-emerald-900; }
+
+.leaflet-container { font-family: inherit; background: #e7e5e4; }
+
+/* Custom Leaflet Tooltip */
+.leaflet-tooltip.gemerlap-map-tooltip {
+  background: rgba(28, 25, 23, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #fff;
+  padding: 6px 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  font-family: inherit;
+}
+.leaflet-tooltip-top.gemerlap-map-tooltip:before {
+  border-top-color: rgba(28, 25, 23, 0.92);
+}
+.leaflet-tooltip-bottom.gemerlap-map-tooltip:before {
+  border-bottom-color: rgba(28, 25, 23, 0.92);
+}
+
+/* Custom Leaflet Popup */
+.leaflet-popup-content-wrapper {
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(231, 229, 228, 0.8);
+  padding: 0;
+  overflow: hidden;
+}
+.leaflet-popup-content {
+  margin: 14px 16px;
+  line-height: 1.5;
+  font-family: inherit;
+}
+.leaflet-container a.leaflet-popup-close-button {
+  top: 10px;
+  right: 12px;
+  color: #78716c;
+  padding: 4px;
+}
+.leaflet-container a.leaflet-popup-close-button:hover {
+  color: #1c1917;
+}
+
+/* Thin Scrollbars */
+.thin-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+.thin-scroll::-webkit-scrollbar-track { background: transparent; }
+.thin-scroll::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 9999px; }
+.thin-scroll::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
+
+/* Range Slider Styling */
+input[type="range"] {
+  accent-color: #059669;
+}

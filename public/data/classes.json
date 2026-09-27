@@ -1,0 +1,47 @@
+[
+  {
+    "id": "kelapa",
+    "label": "Kelapa",
+    "color": "#2f9e44"
+  },
+  {
+    "id": "pala",
+    "label": "Pala",
+    "color": "#8c5a2b"
+  },
+  {
+    "id": "cengkeh",
+    "label": "Cengkeh",
+    "color": "#7048e8"
+  },
+  {
+    "id": "jagung",
+    "label": "Jagung",
+    "color": "#f08c00"
+  },
+  {
+    "id": "padi",
+    "label": "Padi",
+    "color": "#94d82d"
+  },
+  {
+    "id": "hutan",
+    "label": "Hutan/Mangrove",
+    "color": "#14532d"
+  },
+  {
+    "id": "permukiman",
+    "label": "Permukiman",
+    "color": "#e8590c"
+  },
+  {
+    "id": "air",
+    "label": "Air",
+    "color": "#1971c2"
+  },
+  {
+    "id": "lainnya",
+    "label": "Lainnya",
+    "color": "#adb5bd"
+  }
+]

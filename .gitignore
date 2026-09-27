@@ -1,0 +1,7 @@
+node_modules
+dist
+.DS_Store
+.playwright-mcp
+Sen2_selayar_110726/
+*.tif
+*.aux.xml
