@@ -5,6 +5,10 @@ import { intensityColor } from '../lib/data.js';
 const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
 const OSM = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 const LIGHT = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}';
+// Google Maps tiles
+const GOOGLE_SAT = 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}';
+const GOOGLE_ROAD = 'https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}';
+const GOOGLE_TERRAIN = 'https://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}';
 
 const tile = (url, attribution) => L.tileLayer(url, { maxZoom: 19, attribution });
 
@@ -69,17 +73,15 @@ export default function MapView({ desa, kec, stats, level, opacity, split, basem
     const M = (maps.current = {
       main, top,
       mainBase: {
-        satellite: tile(ESRI, 'Esri World Imagery'),
-        light: tile(LIGHT, 'Esri Light Gray Canvas'),
+        satellite: tile(GOOGLE_SAT, '© Google'),
+        roadmap: tile(GOOGLE_ROAD, '© Google'),
+        terrain: tile(GOOGLE_TERRAIN, '© Google'),
         osm: tile(OSM, '© OpenStreetMap'),
       },
-      cmpBase: {
-        satellite: tile(ESRI, 'Esri World Imagery'),
-        light: tile(LIGHT, 'Esri Light Gray Canvas'),
-      },
       topBase: {
-        satellite: tile(ESRI, ''),
-        light: tile(LIGHT, ''),
+        satellite: tile(GOOGLE_SAT, ''),
+        roadmap: tile(GOOGLE_ROAD, ''),
+        terrain: tile(GOOGLE_TERRAIN, ''),
         osm: tile(OSM, ''),
       },
       classMain: L.geoJSON(null, { pane: 'classification' }),
@@ -241,21 +243,19 @@ export default function MapView({ desa, kec, stats, level, opacity, split, basem
 
     // Bersihkan semua layer dari kedua map
     Object.values(M.mainBase).forEach((l) => { if (main.hasLayer(l)) main.removeLayer(l); });
-    Object.values(M.cmpBase).forEach((l) => { if (main.hasLayer(l)) main.removeLayer(l); });
     Object.values(M.topBase).forEach((l) => { if (top.hasLayer(l)) top.removeLayer(l); });
 
     [M.classMain, M.clickMain, M.linesMain].forEach((l) => { if (main.hasLayer(l)) main.removeLayer(l); });
     [M.classTop, M.linesTop].forEach((l) => { if (top.hasLayer(l)) top.removeLayer(l); });
 
     if (split) {
-      // Split mode:
-      // Bawah (main, terlihat di kanan): Citra satelit murni pembanding
-      M.cmpBase.satellite.addTo(main);
+      // Split mode: kedua peta menggunakan basemap yang SAMA
+      const activeBase = M.mainBase[basemap] || M.mainBase.satellite;
+      activeBase.addTo(main);
       M.clickMain.addTo(main);
       M.clickMain.bringToFront();
 
-      // Atas (top, terlihat di kiri): Basemap pilihan + layer klasifikasi
-      const activeTopBase = M.topBase[basemap] || M.topBase.light;
+      const activeTopBase = M.topBase[basemap] || M.topBase.satellite;
       activeTopBase.addTo(top);
       M.classTop.addTo(top);
       M.linesTop.addTo(top);

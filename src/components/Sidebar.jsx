@@ -142,8 +142,8 @@ export default function Sidebar({
               ),
             },
             {
-              id: 'light',
-              label: 'Terang',
+              id: 'roadmap',
+              label: 'Roadmap',
               icon: (
                 <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="12" cy="12" r="5" />
@@ -155,8 +155,8 @@ export default function Sidebar({
               ),
             },
             {
-              id: 'osm',
-              label: 'OSM',
+              id: 'terrain',
+              label: 'Terrain',
               icon: (
                 <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
@@ -188,7 +188,7 @@ export default function Sidebar({
         >
           <div>
             <div className="text-xs font-bold text-stone-800">Split View</div>
-            <div className="text-[10px] text-stone-500">Klasifikasi vs Citra Satelit</div>
+            <div className="text-[10px] text-stone-500">Klasifikasi vs Basemap</div>
           </div>
           <button
             type="button"

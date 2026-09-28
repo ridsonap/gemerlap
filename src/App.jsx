@@ -205,7 +205,7 @@ export default function App() {
                 Klasifikasi
               </span>
               <span className="px-2 py-0.5 text-stone-300">
-                Citra Satelit
+                {basemap === 'satellite' ? 'Google Satelit' : basemap === 'roadmap' ? 'Google Roadmap' : basemap === 'terrain' ? 'Google Terrain' : 'OSM'}
               </span>
             </div>
           )}
