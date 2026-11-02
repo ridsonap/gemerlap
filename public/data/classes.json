@@ -1,28 +1,8 @@
 [
   {
     "id": "kelapa",
-    "label": "Kelapa",
+    "label": "Pohon Kelapa",
     "color": "#2f9e44"
-  },
-  {
-    "id": "pala",
-    "label": "Pala",
-    "color": "#8c5a2b"
-  },
-  {
-    "id": "cengkeh",
-    "label": "Cengkeh",
-    "color": "#7048e8"
-  },
-  {
-    "id": "jagung",
-    "label": "Jagung",
-    "color": "#f08c00"
-  },
-  {
-    "id": "padi",
-    "label": "Padi",
-    "color": "#94d82d"
   },
   {
     "id": "hutan",
@@ -36,12 +16,12 @@
   },
   {
     "id": "air",
-    "label": "Air",
+    "label": "Badan Air",
     "color": "#1971c2"
   },
   {
     "id": "lainnya",
-    "label": "Lainnya",
+    "label": "Lahan Terbuka/Lainnya",
     "color": "#adb5bd"
   }
 ]

@@ -47,16 +47,16 @@ export default function StatsPanel({ stats, selected, focus, onSelectKec, onColl
 
   if (!stats || !ctx) return <div className="p-5 text-sm text-stone-500">Memuat analisis statistik…</div>;
 
-  const kelasArr = stats.kelas.map((c) => ({ ...c, ha: ctx.kelas[c.id] || 0 }));
-  const fokusArr = ['kelapa', 'pala', 'cengkeh', 'jagung', 'padi'].map((id) => {
-    const c = stats.kelas.find((x) => x.id === id);
-    return {
-      id,
-      name: c.label,
-      ha: Math.round((ctx.kelas[id] || 0) * 10) / 10,
-      fill: c.color,
-    };
-  });
+  const kelasArr = stats.kelas.map((c) => ({
+    ...c,
+    ha: Math.round((ctx.kelas[c.id] || 0) * 10) / 10,
+  }));
+  const chartData = kelasArr.map((c) => ({
+    id: c.id,
+    name: c.label,
+    ha: c.ha,
+    fill: c.color,
+  }));
 
   const activeFocusLabel = focus === 'dominan' ? 'Kelapa' : stats.kelas.find((c) => c.id === focus)?.label || focus;
   const activeFocusColor = stats.kelas.find((c) => c.id === (focus === 'dominan' ? 'kelapa' : focus))?.color || '#059669';
@@ -126,18 +126,18 @@ export default function StatsPanel({ stats, selected, focus, onSelectKec, onColl
         </div>
       </div>
 
-      {/* 3. 5 Mini Cards Komoditas */}
+      {/* 3. Mini Cards Tutupan Lahan */}
       <div>
-        <p className="text-[10px] font-bold uppercase tracking-wider text-stone-400 mb-1.5">5 Komoditas Strategis</p>
+        <p className="text-[10px] font-bold uppercase tracking-wider text-stone-400 mb-1.5">Klasifikasi Tutupan Lahan</p>
         <div className="grid grid-cols-5 gap-1.5">
-          {fokusArr.map((f) => (
+          {kelasArr.map((f) => (
             <div
-              key={f.name}
+              key={f.id}
               className="rounded-xl border border-stone-200/80 bg-white px-1.5 py-2 text-center shadow-xs transition hover:border-emerald-300 hover:shadow-sm overflow-hidden flex flex-col justify-between min-w-0"
             >
               <div>
-                <div className="mx-auto h-2 w-2 rounded-full shadow-xs" style={{ background: f.fill }} />
-                <p className="mt-1 truncate text-[10px] font-semibold text-stone-600">{f.name}</p>
+                <div className="mx-auto h-2 w-2 rounded-full shadow-xs" style={{ background: f.color }} />
+                <p className="mt-1 truncate text-[10px] font-semibold text-stone-600" title={f.label}>{f.label}</p>
               </div>
               <div className="mt-1">
                 <p className="text-[11px] sm:text-xs font-bold text-stone-900 tabular-nums tracking-tighter whitespace-nowrap leading-none" title={`${f.ha.toLocaleString('id-ID')} ha`}>
@@ -150,20 +150,20 @@ export default function StatsPanel({ stats, selected, focus, onSelectKec, onColl
         </div>
       </div>
 
-      {/* 4. Chart Komparasi 5 Komoditas */}
+      {/* 4. Chart Komposisi Tutupan Lahan */}
       <section className="rounded-2xl border border-stone-200/80 bg-white p-3.5 shadow-sm">
         <div className="flex items-center justify-between mb-2">
           <h3 className="text-xs font-bold uppercase tracking-wider text-stone-700">
-            Perbandingan Komoditas (Hektar)
+            Luas Tutupan Lahan (Hektar)
           </h3>
-          <span className="text-[10px] font-medium text-stone-400">Bar Chart</span>
+          <span className="text-[10px] font-medium text-stone-400">Sentinel-2 L2A</span>
         </div>
         <div className="h-44 w-full">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={fokusArr} layout="vertical" margin={{ left: 4, right: 12, top: 4, bottom: 4 }}>
+            <BarChart data={chartData} layout="vertical" margin={{ left: 4, right: 12, top: 4, bottom: 4 }}>
               <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#f0eeee" />
               <XAxis type="number" tick={{ fontSize: 10, fill: '#78716c' }} tickFormatter={(v) => `${(v/1000).toFixed(0)}k`} />
-              <YAxis type="category" dataKey="name" width={60} tick={{ fontSize: 11, fontWeight: 500, fill: '#44403c' }} />
+              <YAxis type="category" dataKey="name" width={75} tick={{ fontSize: 10, fontWeight: 500, fill: '#44403c' }} />
               <Tooltip
                 content={({ active, payload }) => {
                   if (active && payload && payload.length) {
@@ -184,7 +184,7 @@ export default function StatsPanel({ stats, selected, focus, onSelectKec, onColl
                 }}
               />
               <Bar dataKey="ha" radius={[0, 6, 6, 0]}>
-                {fokusArr.map((entry) => (
+                {chartData.map((entry) => (
                   <Cell key={`cell-${entry.name}`} fill={entry.fill} />
                 ))}
               </Bar>

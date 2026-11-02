@@ -10,28 +10,8 @@
   "kelas": [
     {
       "id": "kelapa",
-      "label": "Kelapa",
+      "label": "Pohon Kelapa",
       "color": "#2f9e44"
-    },
-    {
-      "id": "pala",
-      "label": "Pala",
-      "color": "#8c5a2b"
-    },
-    {
-      "id": "cengkeh",
-      "label": "Cengkeh",
-      "color": "#7048e8"
-    },
-    {
-      "id": "jagung",
-      "label": "Jagung",
-      "color": "#f08c00"
-    },
-    {
-      "id": "padi",
-      "label": "Padi",
-      "color": "#94d82d"
     },
     {
       "id": "hutan",
@@ -45,27 +25,23 @@
     },
     {
       "id": "air",
-      "label": "Air",
+      "label": "Badan Air",
       "color": "#1971c2"
     },
     {
       "id": "lainnya",
-      "label": "Lainnya",
+      "label": "Lahan Terbuka/Lainnya",
       "color": "#adb5bd"
     }
   ],
   "kabupaten": {
     "total_ha": 117433.5,
     "kelas": {
-      "kelapa": 31852.2,
-      "pala": 6943.3,
-      "cengkeh": 8530.0,
-      "jagung": 9529.6,
-      "padi": 8259.2,
-      "hutan": 30708.8,
-      "permukiman": 6330.0,
-      "air": 7310.0,
-      "lainnya": 7970.4
+      "kelapa": 32119.7,
+      "hutan": 60263.4,
+      "permukiman": 8662.7,
+      "air": 5759.3,
+      "lainnya": 10628.4
     }
   },
   "kecamatan": {
@@ -73,62 +49,46 @@
       "total_ha": 13391.1,
       "kelas": {
         "kelapa": 3749.5,
-        "pala": 937.4,
-        "cengkeh": 1071.2,
-        "jagung": 1606.9,
-        "padi": 1874.8,
-        "hutan": 2142.6,
-        "permukiman": 669.5,
+        "hutan": 6963.4,
+        "permukiman": 1071.2,
         "air": 535.8,
-        "lainnya": 803.4
+        "lainnya": 1071.2
       },
       "n_desa": 10,
-      "dominan": "kelapa"
+      "dominan": "hutan"
     },
     "Pasilambena": {
       "total_ha": 10299.7,
       "kelas": {
         "kelapa": 3604.9,
-        "pala": 309.1,
-        "cengkeh": 309.1,
-        "jagung": 618.0,
-        "padi": 206.0,
-        "hutan": 3295.3,
-        "permukiman": 515.1,
-        "air": 721.1,
-        "lainnya": 721.1
+        "hutan": 4634.7,
+        "permukiman": 618.0,
+        "air": 515.1,
+        "lainnya": 927.0
       },
       "n_desa": 6,
-      "dominan": "kelapa"
+      "dominan": "hutan"
     },
     "Pasimassunggu Timur": {
       "total_ha": 5968.9,
       "kelas": {
         "kelapa": 1610.4,
-        "pala": 128.2,
-        "cengkeh": 128.2,
-        "jagung": 320.6,
-        "padi": 128.2,
-        "hutan": 2371.2,
-        "permukiman": 320.6,
-        "air": 512.8,
-        "lainnya": 448.7
+        "hutan": 3076.6,
+        "permukiman": 384.5,
+        "air": 320.6,
+        "lainnya": 576.8
       },
       "n_desa": 6,
-      "dominan": "kelapa"
+      "dominan": "hutan"
     },
     "Pasimarannu": {
       "total_ha": 17780.9,
       "kelas": {
-        "kelapa": 7615.0,
-        "pala": 328.0,
-        "cengkeh": 328.0,
-        "jagung": 820.0,
-        "padi": 328.0,
-        "hutan": 5082.5,
-        "permukiman": 820.0,
-        "air": 1311.8,
-        "lainnya": 1147.6
+        "kelapa": 7570.3,
+        "hutan": 7019.5,
+        "permukiman": 957.4,
+        "air": 797.9,
+        "lainnya": 1435.8
       },
       "n_desa": 8,
       "dominan": "kelapa"
@@ -137,113 +97,85 @@
       "total_ha": 515.9,
       "kelas": {
         "kelapa": 61.9,
-        "pala": 10.4,
-        "cengkeh": 10.4,
-        "jagung": 20.6,
-        "padi": 20.6,
-        "hutan": 51.6,
-        "permukiman": 247.5,
-        "air": 41.3,
-        "lainnya": 51.6
+        "hutan": 61.9,
+        "permukiman": 319.9,
+        "air": 30.9,
+        "lainnya": 41.3
       },
       "n_desa": 3,
-      "dominan": "kelapa"
+      "dominan": "permukiman"
     },
     "Bontosikuyu": {
       "total_ha": 20780.4,
       "kelas": {
-        "kelapa": 2989.8,
-        "pala": 2372.0,
-        "cengkeh": 3320.9,
-        "jagung": 1897.8,
-        "padi": 1897.8,
-        "hutan": 4980.9,
-        "permukiman": 949.0,
-        "air": 949.0,
-        "lainnya": 1423.2
+        "kelapa": 3076.4,
+        "hutan": 13397.5,
+        "permukiman": 1435.5,
+        "air": 957.0,
+        "lainnya": 1914.0
       },
       "n_desa": 12,
-      "dominan": "cengkeh"
+      "dominan": "hutan"
     },
     "Buki": {
       "total_ha": 6727.1,
       "kelas": {
-        "kelapa": 1681.7,
-        "pala": 538.2,
-        "cengkeh": 605.5,
-        "jagung": 740.0,
-        "padi": 807.3,
-        "hutan": 1345.3,
-        "permukiman": 269.2,
-        "air": 269.2,
-        "lainnya": 470.7
+        "kelapa": 1749.0,
+        "hutan": 3632.8,
+        "permukiman": 470.8,
+        "air": 269.1,
+        "lainnya": 605.4
       },
       "n_desa": 7,
-      "dominan": "kelapa"
+      "dominan": "hutan"
     },
     "Bontomatene": {
       "total_ha": 15831.0,
       "kelas": {
-        "kelapa": 4116.1,
-        "pala": 1424.8,
-        "cengkeh": 1741.4,
-        "jagung": 1582.9,
-        "padi": 1741.4,
-        "hutan": 2849.8,
-        "permukiman": 791.5,
-        "air": 633.3,
-        "lainnya": 949.8
+        "kelapa": 4274.4,
+        "hutan": 8390.2,
+        "permukiman": 1108.3,
+        "air": 633.2,
+        "lainnya": 1424.9
       },
       "n_desa": 12,
-      "dominan": "kelapa"
+      "dominan": "hutan"
     },
     "Takabonerate": {
       "total_ha": 2561.9,
       "kelas": {
         "kelapa": 102.3,
-        "pala": 30.7,
-        "cengkeh": 30.7,
-        "jagung": 61.5,
-        "padi": 30.7,
-        "hutan": 1075.8,
-        "permukiman": 246.0,
-        "air": 676.6,
-        "lainnya": 307.6
+        "hutan": 1198.2,
+        "permukiman": 315.3,
+        "air": 567.7,
+        "lainnya": 378.4
       },
       "n_desa": 9,
-      "dominan": "kelapa"
+      "dominan": "hutan"
     },
     "Bontoharu": {
       "total_ha": 11994.1,
       "kelas": {
         "kelapa": 3478.1,
-        "pala": 599.6,
-        "cengkeh": 719.7,
-        "jagung": 1199.2,
-        "padi": 959.5,
-        "hutan": 2879.2,
-        "permukiman": 839.5,
-        "air": 599.6,
-        "lainnya": 719.7
+        "hutan": 5757.5,
+        "permukiman": 1199.2,
+        "air": 479.8,
+        "lainnya": 1079.5
       },
       "n_desa": 8,
-      "dominan": "kelapa"
+      "dominan": "hutan"
     },
     "Pasimassunggu": {
       "total_ha": 11582.5,
       "kelas": {
         "kelapa": 2842.5,
-        "pala": 264.9,
-        "cengkeh": 264.9,
-        "jagung": 662.1,
-        "padi": 264.9,
-        "hutan": 4634.6,
-        "permukiman": 662.1,
-        "air": 1059.5,
-        "lainnya": 927.0
+        "hutan": 6131.1,
+        "permukiman": 782.6,
+        "air": 652.2,
+        "lainnya": 1174.1
       },
       "n_desa": 7,
-      "dominan": "kelapa"
+      "dominan": "hutan"
     }
   },
   "desa": {
@@ -251,17 +183,13 @@
       "nmkec": "Bontomanai",
       "nmdesa": "Mare Mare",
       "total_ha": 674.0,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 188.7,
-        "pala": 47.2,
-        "cengkeh": 53.9,
-        "jagung": 80.9,
-        "padi": 94.4,
-        "hutan": 107.8,
-        "permukiman": 33.7,
+        "hutan": 350.5,
+        "permukiman": 53.9,
         "air": 27.0,
-        "lainnya": 40.4
+        "lainnya": 53.9
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -269,17 +197,13 @@
       "nmkec": "Bontomanai",
       "nmdesa": "Bonea Makmur",
       "total_ha": 1878.5,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 526.0,
-        "pala": 131.5,
-        "cengkeh": 150.3,
-        "jagung": 225.4,
-        "padi": 263.0,
-        "hutan": 300.6,
-        "permukiman": 93.9,
+        "hutan": 976.8,
+        "permukiman": 150.3,
         "air": 75.1,
-        "lainnya": 112.7
+        "lainnya": 150.3
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -287,17 +211,13 @@
       "nmkec": "Pasilambena",
       "nmdesa": "Garaupa",
       "total_ha": 3045.1,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 1065.8,
-        "pala": 91.4,
-        "cengkeh": 91.4,
-        "jagung": 182.7,
-        "padi": 60.9,
-        "hutan": 974.2,
-        "permukiman": 152.3,
-        "air": 213.2,
-        "lainnya": 213.2
+        "hutan": 1370.2,
+        "permukiman": 182.7,
+        "air": 152.3,
+        "lainnya": 274.1
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -305,17 +225,13 @@
       "nmkec": "Pasimassunggu Timur",
       "nmdesa": "Ujung",
       "total_ha": 229.7,
-      "dominan": "jagung",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 0.5,
-        "pala": 6.7,
-        "cengkeh": 6.7,
-        "jagung": 16.9,
-        "padi": 6.7,
-        "hutan": 124.7,
-        "permukiman": 16.9,
-        "air": 27.0,
-        "lainnya": 23.6
+        "hutan": 161.8,
+        "permukiman": 20.2,
+        "air": 16.9,
+        "lainnya": 30.3
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -323,17 +239,13 @@
       "nmkec": "Pasimarannu",
       "nmdesa": "Bonerate",
       "total_ha": 59.0,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 22.4,
-        "pala": 1.2,
-        "cengkeh": 1.2,
-        "jagung": 3.0,
-        "padi": 1.2,
-        "hutan": 18.2,
-        "permukiman": 3.0,
-        "air": 4.7,
-        "lainnya": 4.1
+        "kelapa": 21.2,
+        "hutan": 26.0,
+        "permukiman": 3.5,
+        "air": 3.0,
+        "lainnya": 5.3
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -341,17 +253,13 @@
       "nmkec": "Benteng",
       "nmdesa": "Benteng",
       "total_ha": 194.1,
-      "dominan": "kelapa",
+      "dominan": "permukiman",
       "kelas": {
         "kelapa": 23.3,
-        "pala": 3.9,
-        "cengkeh": 3.9,
-        "jagung": 7.8,
-        "padi": 7.8,
-        "hutan": 19.4,
-        "permukiman": 93.1,
-        "air": 15.5,
-        "lainnya": 19.4
+        "hutan": 23.3,
+        "permukiman": 120.4,
+        "air": 11.6,
+        "lainnya": 15.5
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -359,17 +267,13 @@
       "nmkec": "Pasilambena",
       "nmdesa": "Pulo Madu",
       "total_ha": 1122.3,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 392.8,
-        "pala": 33.7,
-        "cengkeh": 33.7,
-        "jagung": 67.3,
-        "padi": 22.4,
-        "hutan": 359.1,
-        "permukiman": 56.1,
-        "air": 78.6,
-        "lainnya": 78.6
+        "hutan": 505.1,
+        "permukiman": 67.3,
+        "air": 56.1,
+        "lainnya": 101.0
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -377,17 +281,13 @@
       "nmkec": "Bontosikuyu",
       "nmdesa": "Laiyolo",
       "total_ha": 2973.8,
-      "dominan": "cengkeh",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 0.4,
-        "pala": 396.5,
-        "cengkeh": 555.0,
-        "jagung": 317.2,
-        "padi": 317.2,
-        "hutan": 832.4,
-        "permukiman": 158.6,
-        "air": 158.6,
-        "lainnya": 237.9
+        "hutan": 2250.2,
+        "permukiman": 241.1,
+        "air": 160.7,
+        "lainnya": 321.4
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -395,17 +295,13 @@
       "nmkec": "Bontosikuyu",
       "nmdesa": "Khusus Bahuluang",
       "total_ha": 194.4,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 37.3,
-        "pala": 20.9,
-        "cengkeh": 29.3,
-        "jagung": 16.8,
-        "padi": 16.8,
-        "hutan": 43.9,
-        "permukiman": 8.4,
-        "air": 8.4,
-        "lainnya": 12.6
+        "hutan": 118.9,
+        "permukiman": 12.7,
+        "air": 8.5,
+        "lainnya": 17.0
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -413,17 +309,13 @@
       "nmkec": "Bontosikuyu",
       "nmdesa": "Lowa",
       "total_ha": 2925.6,
-      "dominan": "cengkeh",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 271.8,
-        "pala": 353.8,
-        "cengkeh": 495.4,
-        "jagung": 283.1,
-        "padi": 283.1,
-        "hutan": 743.1,
-        "permukiman": 141.5,
-        "air": 141.5,
-        "lainnya": 212.3
+        "hutan": 2008.3,
+        "permukiman": 215.2,
+        "air": 143.4,
+        "lainnya": 286.9
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -431,17 +323,13 @@
       "nmkec": "Bontomanai",
       "nmdesa": "Bontokoraang",
       "total_ha": 1413.8,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 395.9,
-        "pala": 99.0,
-        "cengkeh": 113.1,
-        "jagung": 169.6,
-        "padi": 197.9,
-        "hutan": 226.2,
-        "permukiman": 70.7,
+        "hutan": 735.1,
+        "permukiman": 113.1,
         "air": 56.6,
-        "lainnya": 84.8
+        "lainnya": 113.1
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -449,17 +337,13 @@
       "nmkec": "Pasilambena",
       "nmdesa": "Garaupa Raya",
       "total_ha": 833.2,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 291.6,
-        "pala": 25.0,
-        "cengkeh": 25.0,
-        "jagung": 50.0,
-        "padi": 16.7,
-        "hutan": 266.6,
-        "permukiman": 41.7,
-        "air": 58.3,
-        "lainnya": 58.3
+        "hutan": 374.9,
+        "permukiman": 50.0,
+        "air": 41.7,
+        "lainnya": 75.0
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -467,17 +351,13 @@
       "nmkec": "Pasilambena",
       "nmdesa": "Karumpa",
       "total_ha": 1367.6,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 478.7,
-        "pala": 41.0,
-        "cengkeh": 41.0,
-        "jagung": 82.1,
-        "padi": 27.4,
-        "hutan": 437.6,
-        "permukiman": 68.4,
-        "air": 95.7,
-        "lainnya": 95.7
+        "hutan": 615.3,
+        "permukiman": 82.1,
+        "air": 68.4,
+        "lainnya": 123.1
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -485,17 +365,13 @@
       "nmkec": "Buki",
       "nmdesa": "Lalang Bata",
       "total_ha": 1127.1,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 281.8,
-        "pala": 90.2,
-        "cengkeh": 101.4,
-        "jagung": 124.0,
-        "padi": 135.2,
-        "hutan": 225.4,
-        "permukiman": 45.1,
+        "kelapa": 293.0,
+        "hutan": 608.7,
+        "permukiman": 78.9,
         "air": 45.1,
-        "lainnya": 78.9
+        "lainnya": 101.4
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -503,17 +379,13 @@
       "nmkec": "Bontomatene",
       "nmdesa": "Barat Lambongan",
       "total_ha": 944.0,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 245.4,
-        "pala": 85.0,
-        "cengkeh": 103.8,
-        "jagung": 94.4,
-        "padi": 103.8,
-        "hutan": 170.0,
-        "permukiman": 47.2,
+        "kelapa": 254.9,
+        "hutan": 500.2,
+        "permukiman": 66.1,
         "air": 37.8,
-        "lainnya": 56.6
+        "lainnya": 85.0
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -521,17 +393,13 @@
       "nmkec": "Takabonerate",
       "nmdesa": "Rajuni",
       "total_ha": 95.7,
-      "dominan": "jagung",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 0.7,
-        "pala": 1.2,
-        "cengkeh": 1.2,
-        "jagung": 2.4,
-        "padi": 1.2,
-        "hutan": 41.5,
-        "permukiman": 9.5,
-        "air": 26.1,
-        "lainnya": 11.9
+        "hutan": 46.3,
+        "permukiman": 12.2,
+        "air": 21.9,
+        "lainnya": 14.6
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -539,17 +407,13 @@
       "nmkec": "Pasilambena",
       "nmdesa": "Kalaotoa",
       "total_ha": 1902.1,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 665.7,
-        "pala": 57.1,
-        "cengkeh": 57.1,
-        "jagung": 114.1,
-        "padi": 38.0,
-        "hutan": 608.6,
-        "permukiman": 95.1,
-        "air": 133.2,
-        "lainnya": 133.2
+        "hutan": 856.0,
+        "permukiman": 114.1,
+        "air": 95.1,
+        "lainnya": 171.2
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -557,17 +421,13 @@
       "nmkec": "Takabonerate",
       "nmdesa": "Khusus Pasitallu",
       "total_ha": 26.0,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 3.9,
-        "pala": 0.3,
-        "cengkeh": 0.3,
-        "jagung": 0.6,
-        "padi": 0.3,
-        "hutan": 9.5,
-        "permukiman": 2.2,
-        "air": 6.1,
-        "lainnya": 2.8
+        "hutan": 10.8,
+        "permukiman": 2.8,
+        "air": 5.1,
+        "lainnya": 3.4
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -575,17 +435,13 @@
       "nmkec": "Bontoharu",
       "nmdesa": "Bontoborusu",
       "total_ha": 1050.3,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 304.6,
-        "pala": 52.5,
-        "cengkeh": 63.0,
-        "jagung": 105.0,
-        "padi": 84.0,
-        "hutan": 252.2,
-        "permukiman": 73.5,
-        "air": 52.5,
-        "lainnya": 63.0
+        "hutan": 504.2,
+        "permukiman": 105.0,
+        "air": 42.0,
+        "lainnya": 94.5
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -596,14 +452,10 @@
       "dominan": "kelapa",
       "kelas": {
         "kelapa": 3456.9,
-        "pala": 102.5,
-        "cengkeh": 102.5,
-        "jagung": 256.3,
-        "padi": 102.5,
-        "hutan": 1589.2,
-        "permukiman": 256.3,
-        "air": 410.1,
-        "lainnya": 358.8
+        "hutan": 2185.0,
+        "permukiman": 298.0,
+        "air": 248.3,
+        "lainnya": 446.9
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -611,17 +463,13 @@
       "nmkec": "Pasimarannu",
       "nmdesa": "Lamantu",
       "total_ha": 1462.4,
-      "dominan": "jagung",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 19.7,
-        "pala": 46.5,
-        "cengkeh": 46.5,
-        "jagung": 116.3,
-        "padi": 46.5,
-        "hutan": 721.5,
-        "permukiman": 116.3,
-        "air": 186.2,
-        "lainnya": 162.9
+        "hutan": 991.8,
+        "permukiman": 135.3,
+        "air": 112.7,
+        "lainnya": 202.9
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -629,17 +477,13 @@
       "nmkec": "Bontosikuyu",
       "nmdesa": "Binanga Sombaiya",
       "total_ha": 2516.6,
-      "dominan": "cengkeh",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 39.1,
-        "pala": 330.3,
-        "cengkeh": 462.5,
-        "jagung": 264.3,
-        "padi": 264.3,
-        "hutan": 693.7,
-        "permukiman": 132.1,
-        "air": 132.1,
-        "lainnya": 198.2
+        "hutan": 1874.9,
+        "permukiman": 200.9,
+        "air": 133.9,
+        "lainnya": 267.8
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -647,17 +491,13 @@
       "nmkec": "Takabonerate",
       "nmdesa": "Nyiur Indah",
       "total_ha": 633.8,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 48.5,
-        "pala": 7.3,
-        "cengkeh": 7.3,
-        "jagung": 14.6,
-        "padi": 7.3,
-        "hutan": 256.1,
-        "permukiman": 58.5,
-        "air": 161.0,
-        "lainnya": 73.2
+        "hutan": 285.2,
+        "permukiman": 75.0,
+        "air": 135.1,
+        "lainnya": 90.0
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -665,17 +505,13 @@
       "nmkec": "Pasimassunggu",
       "nmdesa": "Tanamalala",
       "total_ha": 1567.9,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 252.8,
-        "pala": 39.9,
-        "cengkeh": 39.9,
-        "jagung": 99.6,
-        "padi": 39.9,
-        "hutan": 697.3,
-        "permukiman": 99.6,
-        "air": 159.4,
-        "lainnya": 139.5
+        "hutan": 922.5,
+        "permukiman": 117.8,
+        "air": 98.1,
+        "lainnya": 176.7
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -683,17 +519,13 @@
       "nmkec": "Bontosikuyu",
       "nmdesa": "Lantimbongan",
       "total_ha": 1415.6,
-      "dominan": "cengkeh",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 157.9,
-        "pala": 167.7,
-        "cengkeh": 234.8,
-        "jagung": 134.2,
-        "padi": 134.2,
-        "hutan": 352.0,
-        "permukiman": 67.1,
-        "air": 67.1,
-        "lainnya": 100.6
+        "hutan": 951.7,
+        "permukiman": 102.0,
+        "air": 68.0,
+        "lainnya": 136.0
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -701,17 +533,13 @@
       "nmkec": "Bontomatene",
       "nmdesa": "Tanete",
       "total_ha": 1281.3,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 333.1,
-        "pala": 115.3,
-        "cengkeh": 140.9,
-        "jagung": 128.1,
-        "padi": 140.9,
-        "hutan": 230.7,
-        "permukiman": 64.1,
-        "air": 51.3,
-        "lainnya": 76.9
+        "kelapa": 346.0,
+        "hutan": 679.1,
+        "permukiman": 89.7,
+        "air": 51.2,
+        "lainnya": 115.3
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -719,17 +547,13 @@
       "nmkec": "Bontoharu",
       "nmdesa": "Bontotangnga",
       "total_ha": 1612.2,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 467.5,
-        "pala": 80.6,
-        "cengkeh": 96.7,
-        "jagung": 161.2,
-        "padi": 129.0,
-        "hutan": 387.0,
-        "permukiman": 112.9,
-        "air": 80.6,
-        "lainnya": 96.7
+        "hutan": 773.9,
+        "permukiman": 161.2,
+        "air": 64.5,
+        "lainnya": 145.1
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -737,17 +561,13 @@
       "nmkec": "Pasimarannu",
       "nmdesa": "Majapahit",
       "total_ha": 907.6,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 344.9,
-        "pala": 18.2,
-        "cengkeh": 18.2,
-        "jagung": 45.4,
-        "padi": 18.2,
-        "hutan": 281.2,
-        "permukiman": 45.4,
-        "air": 72.6,
-        "lainnya": 63.5
+        "kelapa": 326.7,
+        "hutan": 399.3,
+        "permukiman": 54.5,
+        "air": 45.4,
+        "lainnya": 81.7
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -755,17 +575,13 @@
       "nmkec": "Pasimassunggu Timur",
       "nmdesa": "Bontomalling",
       "total_ha": 1137.9,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 108.3,
-        "pala": 30.3,
-        "cengkeh": 30.3,
-        "jagung": 75.7,
-        "padi": 30.3,
-        "hutan": 560.2,
-        "permukiman": 75.7,
-        "air": 121.1,
-        "lainnya": 106.0
+        "hutan": 726.8,
+        "permukiman": 90.8,
+        "air": 75.7,
+        "lainnya": 136.3
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -773,17 +589,13 @@
       "nmkec": "Bontoharu",
       "nmdesa": "Bontolebang",
       "total_ha": 328.4,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 95.2,
-        "pala": 16.4,
-        "cengkeh": 19.7,
-        "jagung": 32.8,
-        "padi": 26.3,
-        "hutan": 78.9,
-        "permukiman": 23.0,
-        "air": 16.4,
-        "lainnya": 19.7
+        "hutan": 157.7,
+        "permukiman": 32.8,
+        "air": 13.1,
+        "lainnya": 29.6
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -791,17 +603,13 @@
       "nmkec": "Pasimarannu",
       "nmdesa": "Batu Bingkung",
       "total_ha": 2741.5,
-      "dominan": "jagung",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 2.7,
-        "pala": 88.3,
-        "cengkeh": 88.3,
-        "jagung": 220.9,
-        "padi": 88.3,
-        "hutan": 1369.5,
-        "permukiman": 220.9,
-        "air": 353.4,
-        "lainnya": 309.2
+        "hutan": 1882.9,
+        "permukiman": 256.8,
+        "air": 214.0,
+        "lainnya": 385.1
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -809,17 +617,13 @@
       "nmkec": "Pasimassunggu",
       "nmdesa": "Bontosaile",
       "total_ha": 1141.1,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 419.2,
-        "pala": 21.9,
-        "cengkeh": 21.9,
-        "jagung": 54.7,
-        "padi": 21.9,
-        "hutan": 382.7,
-        "permukiman": 54.7,
-        "air": 87.5,
-        "lainnya": 76.6
+        "hutan": 506.4,
+        "permukiman": 64.6,
+        "air": 53.9,
+        "lainnya": 97.0
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -827,17 +631,13 @@
       "nmkec": "Bontosikuyu",
       "nmdesa": "Tambolongan",
       "total_ha": 915.0,
-      "dominan": "cengkeh",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 81.3,
-        "pala": 111.2,
-        "cengkeh": 155.6,
-        "jagung": 88.9,
-        "padi": 88.9,
-        "hutan": 233.4,
-        "permukiman": 44.5,
-        "air": 44.5,
-        "lainnya": 66.7
+        "hutan": 630.9,
+        "permukiman": 67.6,
+        "air": 45.1,
+        "lainnya": 90.1
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -845,17 +645,13 @@
       "nmkec": "Pasimassunggu",
       "nmdesa": "Labuang Pamajang",
       "total_ha": 2336.7,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 267.6,
-        "pala": 62.7,
-        "cengkeh": 62.7,
-        "jagung": 156.8,
-        "padi": 62.7,
-        "hutan": 1097.2,
-        "permukiman": 156.8,
-        "air": 250.8,
-        "lainnya": 219.4
+        "hutan": 1451.5,
+        "permukiman": 185.3,
+        "air": 154.4,
+        "lainnya": 277.9
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -863,17 +659,13 @@
       "nmkec": "Bontomatene",
       "nmdesa": "Tamalanrea",
       "total_ha": 568.3,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 147.8,
-        "pala": 51.1,
-        "cengkeh": 62.5,
-        "jagung": 56.8,
-        "padi": 62.5,
-        "hutan": 102.4,
-        "permukiman": 28.4,
+        "kelapa": 153.4,
+        "hutan": 301.2,
+        "permukiman": 39.8,
         "air": 22.7,
-        "lainnya": 34.1
+        "lainnya": 51.2
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -881,17 +673,13 @@
       "nmkec": "Bontomatene",
       "nmdesa": "Onto",
       "total_ha": 560.2,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 145.7,
-        "pala": 50.4,
-        "cengkeh": 61.6,
-        "jagung": 56.0,
-        "padi": 61.6,
-        "hutan": 100.9,
-        "permukiman": 28.0,
+        "kelapa": 151.3,
+        "hutan": 296.9,
+        "permukiman": 39.2,
         "air": 22.4,
-        "lainnya": 33.6
+        "lainnya": 50.4
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -899,17 +687,13 @@
       "nmkec": "Bontomatene",
       "nmdesa": "Menara Indah",
       "total_ha": 272.4,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 70.8,
-        "pala": 24.5,
-        "cengkeh": 30.0,
-        "jagung": 27.2,
-        "padi": 30.0,
-        "hutan": 49.1,
-        "permukiman": 13.6,
+        "kelapa": 73.5,
+        "hutan": 144.4,
+        "permukiman": 19.1,
         "air": 10.9,
-        "lainnya": 16.3
+        "lainnya": 24.5
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -917,17 +701,13 @@
       "nmkec": "Pasimassunggu Timur",
       "nmdesa": "Bontobulaeng",
       "total_ha": 1064.5,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 161.3,
-        "pala": 26.6,
-        "cengkeh": 26.6,
-        "jagung": 66.4,
-        "padi": 26.6,
-        "hutan": 491.3,
-        "permukiman": 66.4,
-        "air": 106.3,
-        "lainnya": 93.0
+        "hutan": 637.6,
+        "permukiman": 79.7,
+        "air": 66.4,
+        "lainnya": 119.5
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -935,17 +715,13 @@
       "nmkec": "Pasimarannu",
       "nmdesa": "Bonea",
       "total_ha": 403.2,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 153.2,
-        "pala": 8.1,
-        "cengkeh": 8.1,
-        "jagung": 20.2,
-        "padi": 8.1,
-        "hutan": 124.8,
-        "permukiman": 20.2,
-        "air": 32.3,
-        "lainnya": 28.2
+        "kelapa": 145.2,
+        "hutan": 177.3,
+        "permukiman": 24.2,
+        "air": 20.2,
+        "lainnya": 36.3
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -953,17 +729,13 @@
       "nmkec": "Bontosikuyu",
       "nmdesa": "Appatanah",
       "total_ha": 727.8,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 182.5,
-        "pala": 72.7,
-        "cengkeh": 101.8,
-        "jagung": 58.2,
-        "padi": 58.2,
-        "hutan": 152.6,
-        "permukiman": 29.1,
-        "air": 29.1,
-        "lainnya": 43.6
+        "hutan": 412.6,
+        "permukiman": 44.2,
+        "air": 29.5,
+        "lainnya": 59.0
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -971,17 +743,13 @@
       "nmkec": "Bontomanai",
       "nmdesa": "Kaburu",
       "total_ha": 310.5,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 86.9,
-        "pala": 21.7,
-        "cengkeh": 24.8,
-        "jagung": 37.3,
-        "padi": 43.5,
-        "hutan": 49.8,
-        "permukiman": 15.5,
+        "hutan": 161.6,
+        "permukiman": 24.8,
         "air": 12.4,
-        "lainnya": 18.6
+        "lainnya": 24.8
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -989,17 +757,13 @@
       "nmkec": "Pasimassunggu Timur",
       "nmdesa": "Lembang Baji",
       "total_ha": 689.1,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 152.5,
-        "pala": 15.8,
-        "cengkeh": 15.8,
-        "jagung": 39.5,
-        "padi": 15.8,
-        "hutan": 291.9,
-        "permukiman": 39.5,
-        "air": 63.1,
-        "lainnya": 55.2
+        "hutan": 378.8,
+        "permukiman": 47.3,
+        "air": 39.5,
+        "lainnya": 71.0
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1007,17 +771,13 @@
       "nmkec": "Bontomatene",
       "nmdesa": "Batangmata",
       "total_ha": 224.5,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 58.4,
-        "pala": 20.2,
-        "cengkeh": 24.7,
-        "jagung": 22.4,
-        "padi": 24.7,
-        "hutan": 40.4,
-        "permukiman": 11.2,
+        "kelapa": 60.6,
+        "hutan": 119.0,
+        "permukiman": 15.7,
         "air": 9.0,
-        "lainnya": 13.5
+        "lainnya": 20.2
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1025,17 +785,13 @@
       "nmkec": "Buki",
       "nmdesa": "Buki",
       "total_ha": 1039.2,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 259.8,
-        "pala": 83.1,
-        "cengkeh": 93.5,
-        "jagung": 114.3,
-        "padi": 124.7,
-        "hutan": 207.9,
-        "permukiman": 41.6,
+        "kelapa": 270.2,
+        "hutan": 561.2,
+        "permukiman": 72.7,
         "air": 41.6,
-        "lainnya": 72.7
+        "lainnya": 93.5
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1043,17 +799,13 @@
       "nmkec": "Pasimassunggu",
       "nmdesa": "Teluk Kampe",
       "total_ha": 1758.0,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 215.6,
-        "pala": 46.7,
-        "cengkeh": 46.7,
-        "jagung": 116.8,
-        "padi": 46.7,
-        "hutan": 818.1,
-        "permukiman": 116.8,
-        "air": 187.0,
-        "lainnya": 163.6
+        "hutan": 1082.0,
+        "permukiman": 138.1,
+        "air": 115.1,
+        "lainnya": 207.2
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1061,17 +813,13 @@
       "nmkec": "Bontomatene",
       "nmdesa": "Kayu Bauk",
       "total_ha": 1361.0,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 353.9,
-        "pala": 122.5,
-        "cengkeh": 149.7,
-        "jagung": 136.1,
-        "padi": 149.7,
-        "hutan": 245.0,
-        "permukiman": 68.0,
+        "kelapa": 367.5,
+        "hutan": 721.3,
+        "permukiman": 95.3,
         "air": 54.4,
-        "lainnya": 81.7
+        "lainnya": 122.5
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1082,14 +830,10 @@
       "dominan": "kelapa",
       "kelas": {
         "kelapa": 741.6,
-        "pala": 22.7,
-        "cengkeh": 22.7,
-        "jagung": 56.7,
-        "padi": 22.7,
-        "hutan": 396.7,
-        "permukiman": 56.7,
-        "air": 90.7,
-        "lainnya": 79.4
+        "hutan": 525.0,
+        "permukiman": 67.0,
+        "air": 55.8,
+        "lainnya": 100.5
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1097,17 +841,13 @@
       "nmkec": "Bontomanai",
       "nmdesa": "Jambuiya",
       "total_ha": 943.8,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 264.3,
-        "pala": 66.1,
-        "cengkeh": 75.5,
-        "jagung": 113.2,
-        "padi": 132.1,
-        "hutan": 151.0,
-        "permukiman": 47.2,
+        "hutan": 490.7,
+        "permukiman": 75.5,
         "air": 37.8,
-        "lainnya": 56.6
+        "lainnya": 75.5
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1115,17 +855,13 @@
       "nmkec": "Pasimarannu",
       "nmdesa": "Sambali",
       "total_ha": 863.1,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 328.0,
-        "pala": 17.3,
-        "cengkeh": 17.3,
-        "jagung": 43.2,
-        "padi": 17.3,
-        "hutan": 267.4,
-        "permukiman": 43.2,
-        "air": 69.0,
-        "lainnya": 60.4
+        "kelapa": 310.7,
+        "hutan": 379.7,
+        "permukiman": 51.8,
+        "air": 43.2,
+        "lainnya": 77.7
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1133,17 +869,13 @@
       "nmkec": "Bontomanai",
       "nmdesa": "Bontomarannu",
       "total_ha": 2104.8,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 589.3,
-        "pala": 147.3,
-        "cengkeh": 168.4,
-        "jagung": 252.6,
-        "padi": 294.7,
-        "hutan": 336.8,
-        "permukiman": 105.2,
+        "hutan": 1094.5,
+        "permukiman": 168.4,
         "air": 84.2,
-        "lainnya": 126.3
+        "lainnya": 168.4
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1151,17 +883,13 @@
       "nmkec": "Takabonerate",
       "nmdesa": "Tambuna",
       "total_ha": 56.9,
-      "dominan": "jagung",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 0.9,
-        "pala": 0.7,
-        "cengkeh": 0.7,
-        "jagung": 1.4,
-        "padi": 0.7,
-        "hutan": 24.5,
-        "permukiman": 5.6,
-        "air": 15.4,
-        "lainnya": 7.0
+        "hutan": 27.3,
+        "permukiman": 7.2,
+        "air": 12.9,
+        "lainnya": 8.6
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1169,17 +897,13 @@
       "nmkec": "Takabonerate",
       "nmdesa": "Kayuadi",
       "total_ha": 572.5,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 18.8,
-        "pala": 6.9,
-        "cengkeh": 6.9,
-        "jagung": 13.8,
-        "padi": 6.9,
-        "hutan": 242.3,
-        "permukiman": 55.4,
-        "air": 152.3,
-        "lainnya": 69.2
+        "hutan": 269.7,
+        "permukiman": 71.0,
+        "air": 127.8,
+        "lainnya": 85.2
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1187,17 +911,13 @@
       "nmkec": "Bontomanai",
       "nmdesa": "Barugaiya",
       "total_ha": 651.4,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 182.4,
-        "pala": 45.6,
-        "cengkeh": 52.1,
-        "jagung": 78.2,
-        "padi": 91.2,
-        "hutan": 104.1,
-        "permukiman": 32.6,
+        "hutan": 338.7,
+        "permukiman": 52.1,
         "air": 26.1,
-        "lainnya": 39.1
+        "lainnya": 52.1
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1208,14 +928,10 @@
       "dominan": "kelapa",
       "kelas": {
         "kelapa": 1145.6,
-        "pala": 27.2,
-        "cengkeh": 27.2,
-        "jagung": 68.1,
-        "padi": 27.2,
-        "hutan": 503.5,
-        "permukiman": 68.1,
-        "air": 108.9,
-        "lainnya": 95.3
+        "hutan": 653.2,
+        "permukiman": 81.7,
+        "air": 68.1,
+        "lainnya": 122.5
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1226,14 +942,10 @@
       "dominan": "kelapa",
       "kelas": {
         "kelapa": 3287.2,
-        "pala": 45.9,
-        "cengkeh": 45.9,
-        "jagung": 114.7,
-        "padi": 45.9,
-        "hutan": 710.7,
-        "permukiman": 114.7,
-        "air": 183.5,
-        "lainnya": 160.5
+        "hutan": 977.5,
+        "permukiman": 133.3,
+        "air": 111.1,
+        "lainnya": 199.9
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1241,17 +953,13 @@
       "nmkec": "Takabonerate",
       "nmdesa": "Tarupa",
       "total_ha": 45.4,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 1.5,
-        "pala": 0.5,
-        "cengkeh": 0.5,
-        "jagung": 1.1,
-        "padi": 0.5,
-        "hutan": 19.3,
-        "permukiman": 4.4,
-        "air": 12.1,
-        "lainnya": 5.5
+        "hutan": 21.4,
+        "permukiman": 5.6,
+        "air": 10.1,
+        "lainnya": 6.8
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1259,17 +967,13 @@
       "nmkec": "Bontosikuyu",
       "nmdesa": "Patilereng",
       "total_ha": 2371.9,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 593.0,
-        "pala": 237.2,
-        "cengkeh": 332.1,
-        "jagung": 189.7,
-        "padi": 189.7,
-        "hutan": 498.1,
-        "permukiman": 94.9,
+        "kelapa": 616.7,
+        "hutan": 1328.2,
+        "permukiman": 142.3,
         "air": 94.9,
-        "lainnya": 142.3
+        "lainnya": 189.8
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1277,17 +981,13 @@
       "nmkec": "Bontoharu",
       "nmdesa": "Bontosunggu",
       "total_ha": 536.3,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 155.5,
-        "pala": 26.8,
-        "cengkeh": 32.2,
-        "jagung": 53.6,
-        "padi": 42.9,
-        "hutan": 128.8,
-        "permukiman": 37.5,
-        "air": 26.8,
-        "lainnya": 32.2
+        "hutan": 257.4,
+        "permukiman": 53.6,
+        "air": 21.5,
+        "lainnya": 48.3
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1295,17 +995,13 @@
       "nmkec": "Pasimassunggu",
       "nmdesa": "Maminasa",
       "total_ha": 1520.0,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 208.6,
-        "pala": 39.7,
-        "cengkeh": 39.7,
-        "jagung": 99.3,
-        "padi": 39.7,
-        "hutan": 695.6,
-        "permukiman": 99.3,
-        "air": 159.0,
-        "lainnya": 139.1
+        "hutan": 919.9,
+        "permukiman": 117.4,
+        "air": 97.9,
+        "lainnya": 176.2
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1316,14 +1012,10 @@
       "dominan": "kelapa",
       "kelas": {
         "kelapa": 737.1,
-        "pala": 31.3,
-        "cengkeh": 31.3,
-        "jagung": 78.2,
-        "padi": 31.3,
-        "hutan": 547.0,
-        "permukiman": 78.2,
-        "air": 125.1,
-        "lainnya": 109.4
+        "hutan": 723.8,
+        "permukiman": 92.4,
+        "air": 77.0,
+        "lainnya": 138.6
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1331,17 +1023,13 @@
       "nmkec": "Pasilambena",
       "nmdesa": "Lembang Matene",
       "total_ha": 2029.4,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 710.3,
-        "pala": 60.9,
-        "cengkeh": 60.9,
-        "jagung": 121.8,
-        "padi": 40.6,
-        "hutan": 649.2,
-        "permukiman": 101.5,
-        "air": 142.1,
-        "lainnya": 142.1
+        "hutan": 913.2,
+        "permukiman": 121.8,
+        "air": 101.5,
+        "lainnya": 182.6
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1349,17 +1037,13 @@
       "nmkec": "Bontomatene",
       "nmdesa": "Pamatata",
       "total_ha": 1198.9,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 311.7,
-        "pala": 107.9,
-        "cengkeh": 131.9,
-        "jagung": 119.9,
-        "padi": 131.9,
-        "hutan": 215.8,
-        "permukiman": 59.9,
+        "kelapa": 323.7,
+        "hutan": 635.4,
+        "permukiman": 83.9,
         "air": 48.0,
-        "lainnya": 71.9
+        "lainnya": 107.9
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1367,17 +1051,13 @@
       "nmkec": "Bontomatene",
       "nmdesa": "Maharayya",
       "total_ha": 1022.2,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 265.8,
-        "pala": 92.0,
-        "cengkeh": 112.4,
-        "jagung": 102.2,
-        "padi": 112.4,
-        "hutan": 184.1,
-        "permukiman": 51.1,
+        "kelapa": 276.0,
+        "hutan": 541.7,
+        "permukiman": 71.6,
         "air": 40.9,
-        "lainnya": 61.3
+        "lainnya": 92.0
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1385,17 +1065,13 @@
       "nmkec": "Takabonerate",
       "nmdesa": "Jinato",
       "total_ha": 344.3,
-      "dominan": "jagung",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 2.6,
-        "pala": 4.3,
-        "cengkeh": 4.3,
-        "jagung": 8.5,
-        "padi": 4.3,
-        "hutan": 149.4,
-        "permukiman": 34.2,
-        "air": 94.0,
-        "lainnya": 42.7
+        "hutan": 166.4,
+        "permukiman": 43.8,
+        "air": 78.9,
+        "lainnya": 52.6
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1403,17 +1079,13 @@
       "nmkec": "Takabonerate",
       "nmdesa": "Batang",
       "total_ha": 667.0,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 25.0,
-        "pala": 8.0,
-        "cengkeh": 8.0,
-        "jagung": 16.1,
-        "padi": 8.0,
-        "hutan": 280.8,
-        "permukiman": 64.2,
-        "air": 176.6,
-        "lainnya": 80.3
+        "hutan": 312.7,
+        "permukiman": 82.3,
+        "air": 148.2,
+        "lainnya": 98.8
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1421,17 +1093,13 @@
       "nmkec": "Takabonerate",
       "nmdesa": "Latondu",
       "total_ha": 120.3,
-      "dominan": "jagung",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 0.4,
-        "pala": 1.5,
-        "cengkeh": 1.5,
-        "jagung": 3.0,
-        "padi": 1.5,
-        "hutan": 52.4,
-        "permukiman": 12.0,
-        "air": 33.0,
-        "lainnya": 15.0
+        "hutan": 58.4,
+        "permukiman": 15.4,
+        "air": 27.7,
+        "lainnya": 18.4
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1439,17 +1107,13 @@
       "nmkec": "Bontomatene",
       "nmdesa": "Bongaiya",
       "total_ha": 5355.1,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 1392.3,
-        "pala": 482.0,
-        "cengkeh": 589.1,
-        "jagung": 535.5,
-        "padi": 589.1,
-        "hutan": 963.8,
-        "permukiman": 267.8,
+        "kelapa": 1445.9,
+        "hutan": 2838.1,
+        "permukiman": 374.9,
         "air": 214.2,
-        "lainnya": 321.3
+        "lainnya": 482.0
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1457,17 +1121,13 @@
       "nmkec": "Buki",
       "nmdesa": "Balang Butung",
       "total_ha": 1282.1,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 320.5,
-        "pala": 102.6,
-        "cengkeh": 115.4,
-        "jagung": 141.0,
-        "padi": 153.9,
-        "hutan": 256.4,
-        "permukiman": 51.3,
+        "kelapa": 333.3,
+        "hutan": 692.3,
+        "permukiman": 89.8,
         "air": 51.3,
-        "lainnya": 89.7
+        "lainnya": 115.4
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1475,17 +1135,13 @@
       "nmkec": "Pasimassunggu Timur",
       "nmdesa": "Bontojati",
       "total_ha": 776.6,
-      "dominan": "jagung",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 42.2,
-        "pala": 21.6,
-        "cengkeh": 21.6,
-        "jagung": 54.0,
-        "padi": 21.6,
-        "hutan": 399.6,
-        "permukiman": 54.0,
-        "air": 86.4,
-        "lainnya": 75.6
+        "hutan": 518.4,
+        "permukiman": 64.8,
+        "air": 54.0,
+        "lainnya": 97.2
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1493,17 +1149,13 @@
       "nmkec": "Bontoharu",
       "nmdesa": "Bontobangun",
       "total_ha": 2220.3,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 643.9,
-        "pala": 111.0,
-        "cengkeh": 133.2,
-        "jagung": 222.0,
-        "padi": 177.6,
-        "hutan": 533.0,
-        "permukiman": 155.4,
-        "air": 111.0,
-        "lainnya": 133.2
+        "hutan": 1065.8,
+        "permukiman": 222.0,
+        "air": 88.8,
+        "lainnya": 199.8
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1511,17 +1163,13 @@
       "nmkec": "Buki",
       "nmdesa": "Buki Timur",
       "total_ha": 1278.8,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 319.7,
-        "pala": 102.3,
-        "cengkeh": 115.1,
-        "jagung": 140.7,
-        "padi": 153.5,
-        "hutan": 255.6,
-        "permukiman": 51.2,
+        "kelapa": 332.5,
+        "hutan": 690.5,
+        "permukiman": 89.5,
         "air": 51.2,
-        "lainnya": 89.5
+        "lainnya": 115.1
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1529,17 +1177,13 @@
       "nmkec": "Bontoharu",
       "nmdesa": "Kalepadang",
       "total_ha": 2396.3,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 694.9,
-        "pala": 119.8,
-        "cengkeh": 143.8,
-        "jagung": 239.6,
-        "padi": 191.7,
-        "hutan": 575.2,
-        "permukiman": 167.7,
-        "air": 119.8,
-        "lainnya": 143.8
+        "hutan": 1150.2,
+        "permukiman": 239.6,
+        "air": 95.9,
+        "lainnya": 215.7
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1547,17 +1191,13 @@
       "nmkec": "Bontosikuyu",
       "nmdesa": "Patikarya",
       "total_ha": 1627.4,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 406.9,
-        "pala": 162.7,
-        "cengkeh": 227.8,
-        "jagung": 130.2,
-        "padi": 130.2,
-        "hutan": 341.8,
-        "permukiman": 65.1,
+        "kelapa": 423.1,
+        "hutan": 911.4,
+        "permukiman": 97.6,
         "air": 65.1,
-        "lainnya": 97.6
+        "lainnya": 130.2
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1565,17 +1205,13 @@
       "nmkec": "Benteng",
       "nmdesa": "Benteng Utara",
       "total_ha": 153.3,
-      "dominan": "kelapa",
+      "dominan": "permukiman",
       "kelas": {
         "kelapa": 18.4,
-        "pala": 3.1,
-        "cengkeh": 3.1,
-        "jagung": 6.1,
-        "padi": 6.1,
-        "hutan": 15.3,
-        "permukiman": 73.6,
-        "air": 12.3,
-        "lainnya": 15.3
+        "hutan": 18.4,
+        "permukiman": 95.0,
+        "air": 9.2,
+        "lainnya": 12.3
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1583,17 +1219,13 @@
       "nmkec": "Bontosikuyu",
       "nmdesa": "Polassi",
       "total_ha": 436.1,
-      "dominan": "cengkeh",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 50.5,
-        "pala": 51.4,
-        "cengkeh": 72.0,
-        "jagung": 41.1,
-        "padi": 41.1,
-        "hutan": 108.0,
-        "permukiman": 20.6,
-        "air": 20.6,
-        "lainnya": 30.8
+        "hutan": 291.8,
+        "permukiman": 31.3,
+        "air": 20.8,
+        "lainnya": 41.7
       },
       "sumber_prediksi": "Sentinel-2 ML (Random Forest)"
     },
@@ -1601,17 +1233,13 @@
       "nmkec": "Bontoharu",
       "nmdesa": "Kahu-Kahu",
       "total_ha": 934.3,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 270.9,
-        "pala": 46.7,
-        "cengkeh": 56.1,
-        "jagung": 93.4,
-        "padi": 74.7,
-        "hutan": 224.3,
-        "permukiman": 65.4,
-        "air": 46.7,
-        "lainnya": 56.1
+        "hutan": 448.5,
+        "permukiman": 93.4,
+        "air": 37.4,
+        "lainnya": 84.1
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1619,17 +1247,13 @@
       "nmkec": "Bontomatene",
       "nmdesa": "Batangmata Sapo",
       "total_ha": 1355.3,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 352.4,
-        "pala": 122.0,
-        "cengkeh": 149.1,
-        "jagung": 135.5,
-        "padi": 149.1,
-        "hutan": 243.9,
-        "permukiman": 67.8,
+        "kelapa": 365.9,
+        "hutan": 718.3,
+        "permukiman": 94.9,
         "air": 54.2,
-        "lainnya": 81.3
+        "lainnya": 122.0
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1637,17 +1261,13 @@
       "nmkec": "Bontomatene",
       "nmdesa": "Bontonasaluk",
       "total_ha": 1687.8,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 438.8,
-        "pala": 151.9,
-        "cengkeh": 185.7,
-        "jagung": 168.8,
-        "padi": 185.7,
-        "hutan": 303.7,
-        "permukiman": 84.4,
+        "kelapa": 455.7,
+        "hutan": 894.6,
+        "permukiman": 118.1,
         "air": 67.5,
-        "lainnya": 101.3
+        "lainnya": 151.9
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1655,17 +1275,13 @@
       "nmkec": "Buki",
       "nmdesa": "Kohala",
       "total_ha": 687.6,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 171.9,
-        "pala": 55.0,
-        "cengkeh": 61.9,
-        "jagung": 75.6,
-        "padi": 82.5,
-        "hutan": 137.6,
-        "permukiman": 27.5,
+        "kelapa": 178.8,
+        "hutan": 371.3,
+        "permukiman": 48.1,
         "air": 27.5,
-        "lainnya": 48.1
+        "lainnya": 61.9
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1673,17 +1289,13 @@
       "nmkec": "Bontoharu",
       "nmdesa": "Putabangun",
       "total_ha": 2916.0,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 845.6,
-        "pala": 145.8,
-        "cengkeh": 175.0,
-        "jagung": 291.6,
-        "padi": 233.3,
-        "hutan": 699.8,
-        "permukiman": 204.1,
-        "air": 145.8,
-        "lainnya": 175.0
+        "hutan": 1399.8,
+        "permukiman": 291.6,
+        "air": 116.6,
+        "lainnya": 262.4
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1691,17 +1303,13 @@
       "nmkec": "Bontomanai",
       "nmdesa": "Polebungin",
       "total_ha": 1864.7,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 522.1,
-        "pala": 130.5,
-        "cengkeh": 149.2,
-        "jagung": 223.8,
-        "padi": 261.1,
-        "hutan": 298.3,
-        "permukiman": 93.2,
+        "hutan": 969.6,
+        "permukiman": 149.2,
         "air": 74.6,
-        "lainnya": 111.9
+        "lainnya": 149.2
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1709,17 +1317,13 @@
       "nmkec": "Bontosikuyu",
       "nmdesa": "Harapan",
       "total_ha": 2261.8,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 565.5,
-        "pala": 226.2,
-        "cengkeh": 316.6,
-        "jagung": 180.9,
-        "padi": 180.9,
-        "hutan": 475.0,
-        "permukiman": 90.5,
+        "kelapa": 588.1,
+        "hutan": 1266.6,
+        "permukiman": 135.7,
         "air": 90.5,
-        "lainnya": 135.7
+        "lainnya": 180.9
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1727,17 +1331,13 @@
       "nmkec": "Bontosikuyu",
       "nmdesa": "Laiyolo Baru",
       "total_ha": 2414.4,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 603.6,
-        "pala": 241.4,
-        "cengkeh": 338.0,
-        "jagung": 193.2,
-        "padi": 193.2,
-        "hutan": 506.9,
-        "permukiman": 96.6,
+        "kelapa": 627.7,
+        "hutan": 1352.0,
+        "permukiman": 144.9,
         "air": 96.6,
-        "lainnya": 144.9
+        "lainnya": 193.2
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1745,17 +1345,13 @@
       "nmkec": "Bontomanai",
       "nmdesa": "Bonea Timur",
       "total_ha": 2384.3,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 667.6,
-        "pala": 166.9,
-        "cengkeh": 190.7,
-        "jagung": 286.1,
-        "padi": 333.8,
-        "hutan": 381.5,
-        "permukiman": 119.2,
+        "hutan": 1239.9,
+        "permukiman": 190.7,
         "air": 95.4,
-        "lainnya": 143.1
+        "lainnya": 190.7
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1763,17 +1359,13 @@
       "nmkec": "Buki",
       "nmdesa": "Mekar Indah",
       "total_ha": 476.2,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 119.0,
-        "pala": 38.1,
-        "cengkeh": 42.9,
-        "jagung": 52.4,
-        "padi": 57.2,
-        "hutan": 95.1,
-        "permukiman": 19.1,
-        "air": 19.1,
-        "lainnya": 33.3
+        "kelapa": 123.8,
+        "hutan": 257.2,
+        "permukiman": 33.3,
+        "air": 19.0,
+        "lainnya": 42.9
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1781,17 +1373,13 @@
       "nmkec": "Bontomanai",
       "nmdesa": "Parak",
       "total_ha": 1165.3,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
         "kelapa": 326.3,
-        "pala": 81.6,
-        "cengkeh": 93.2,
-        "jagung": 139.8,
-        "padi": 163.1,
-        "hutan": 186.5,
-        "permukiman": 58.3,
+        "hutan": 606.0,
+        "permukiman": 93.2,
         "air": 46.6,
-        "lainnya": 69.9
+        "lainnya": 93.2
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1799,17 +1387,13 @@
       "nmkec": "Benteng",
       "nmdesa": "Benteng Selatan",
       "total_ha": 168.5,
-      "dominan": "kelapa",
+      "dominan": "permukiman",
       "kelas": {
         "kelapa": 20.2,
-        "pala": 3.4,
-        "cengkeh": 3.4,
-        "jagung": 6.7,
-        "padi": 6.7,
-        "hutan": 16.9,
-        "permukiman": 80.8,
-        "air": 13.5,
-        "lainnya": 16.9
+        "hutan": 20.2,
+        "permukiman": 104.5,
+        "air": 10.1,
+        "lainnya": 13.5
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     },
@@ -1817,17 +1401,13 @@
       "nmkec": "Buki",
       "nmdesa": "Bontolempangan",
       "total_ha": 836.1,
-      "dominan": "kelapa",
+      "dominan": "hutan",
       "kelas": {
-        "kelapa": 209.0,
-        "pala": 66.9,
-        "cengkeh": 75.3,
-        "jagung": 92.0,
-        "padi": 100.3,
-        "hutan": 167.3,
-        "permukiman": 33.4,
+        "kelapa": 217.4,
+        "hutan": 451.6,
+        "permukiman": 58.5,
         "air": 33.4,
-        "lainnya": 58.5
+        "lainnya": 75.2
       },
       "sumber_prediksi": "Sentinel-2 Canopy Profile"
     }

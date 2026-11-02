@@ -21,8 +21,9 @@ export default function Sidebar({
   }, [q, stats]);
 
   const fokusOps = [
-    { id: 'dominan', label: 'Komoditas dominan', color: '#059669' },
-    ...(stats?.kelas.filter((c) => ['kelapa', 'pala', 'cengkeh', 'jagung', 'padi'].includes(c.id)) || []),
+    { id: 'kelapa', label: 'Pohon Kelapa (Sentinel-2)', color: '#2f9e44' },
+    { id: 'dominan', label: 'Tutupan Dominan', color: '#059669' },
+    ...(stats?.kelas.filter((c) => c.id !== 'kelapa') || []),
   ];
 
   const totalKabupatenHa = stats?.kabupaten?.total_ha || 1;
@@ -120,7 +121,7 @@ export default function Sidebar({
         </div>
         <p className="mt-1 text-[11px] leading-snug text-stone-500">
           {focus === 'dominan'
-            ? 'Poligon diwarnai sesuai tanaman komoditas terluas di wilayah.'
+            ? 'Poligon diwarnai sesuai kelas tutupan lahan terluas di wilayah.'
             : `Gradasi intensitas luas ${fokusOps.find(o => o.id === focus)?.label || focus}.`}
         </p>
       </section>

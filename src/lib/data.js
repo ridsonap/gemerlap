@@ -17,10 +17,10 @@ export async function loadData() {
 
 const COLOR_RAMPS = {
   kelapa: ['#ecfdf5', '#a7f3d0', '#6ee7b7', '#34d399', '#10b981', '#059669', '#047857'],
-  pala: ['#fdf8f6', '#f3e8e2', '#dcc1b0', '#c2977b', '#a47250', '#85512d', '#5a341b'],
-  cengkeh: ['#f5f3ff', '#ddd6fe', '#c4b5fd', '#a78bfa', '#8b5cf6', '#7048e8', '#5b21b6'],
-  jagung: ['#fffbeb', '#fef3c7', '#fde68a', '#fcd34d', '#fbbf24', '#f59e0b', '#d97706'],
-  padi: ['#f7fee7', '#ecfccb', '#d9f99d', '#bef264', '#a3e635', '#84cc16', '#4d7c0f'],
+  hutan: ['#f0fdf4', '#bbf7d0', '#86efac', '#4ade80', '#22c55e', '#16a34a', '#14532d'],
+  permukiman: ['#fff7ed', '#ffedd5', '#fed7aa', '#fb923c', '#ea580c', '#c2410c', '#7c2d12'],
+  air: ['#f0f9ff', '#e0f2fe', '#bae6fd', '#38bdf8', '#0284c7', '#0369a1', '#0c4a6e'],
+  lainnya: ['#fafaf9', '#f5f5f4', '#e7e5e4', '#d6d3d1', '#a8a29e', '#78716c', '#44403c'],
   default: ['#ecfdf5', '#a7f3d0', '#6ee7b7', '#34d399', '#10b981', '#059669', '#047857'],
 };
 

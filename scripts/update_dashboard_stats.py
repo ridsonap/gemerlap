@@ -20,19 +20,21 @@ DIST_DATA = ROOT / "dist" / "data"
 ML_PRED_FILE = ROOT / "data" / "processed" / "desa_coconut_predictions.json"
 SHP_DESA = ROOT / "Peta" / "Desa 7301" / "Desa_7301.shp"
 
-# Profil agroekologi berbasis BPS Selayar & karakteristik tutupan pulau
+# Profil tutupan lahan per kecamatan berbasis Sentinel-2 dan BPS Selayar
+# Rasio kelapa: proporsi kanopi pohon kelapa
+# Sisa luas daratan dialokasikan ke hutan/mangrove, permukiman, air, dan lainnya
 KEC_PROFILE = {
-    "BONTOMANAI": {"kelapa": 0.28, "pala": 0.07, "cengkeh": 0.08, "jagung": 0.12, "padi": 0.14, "hutan": 0.16, "permukiman": 0.05, "air": 0.04, "lainnya": 0.06},
-    "BONTOMATENE": {"kelapa": 0.26, "pala": 0.09, "cengkeh": 0.11, "jagung": 0.10, "padi": 0.11, "hutan": 0.18, "permukiman": 0.05, "air": 0.04, "lainnya": 0.06},
-    "BONTOSIKUYU": {"kelapa": 0.25, "pala": 0.10, "cengkeh": 0.14, "jagung": 0.08, "padi": 0.08, "hutan": 0.21, "permukiman": 0.04, "air": 0.04, "lainnya": 0.06},
-    "BONTOHARU": {"kelapa": 0.29, "pala": 0.05, "cengkeh": 0.06, "jagung": 0.10, "padi": 0.08, "hutan": 0.24, "permukiman": 0.07, "air": 0.05, "lainnya": 0.06},
-    "BENTENG": {"kelapa": 0.12, "pala": 0.02, "cengkeh": 0.02, "jagung": 0.04, "padi": 0.04, "hutan": 0.10, "permukiman": 0.48, "air": 0.08, "lainnya": 0.10},
-    "BUKI": {"kelapa": 0.25, "pala": 0.08, "cengkeh": 0.09, "jagung": 0.11, "padi": 0.12, "hutan": 0.20, "permukiman": 0.04, "air": 0.04, "lainnya": 0.07},
-    "PASILAMBENA": {"kelapa": 0.35, "pala": 0.03, "cengkeh": 0.03, "jagung": 0.06, "padi": 0.02, "hutan": 0.32, "permukiman": 0.05, "air": 0.07, "lainnya": 0.07},
-    "PASIMARANNU": {"kelapa": 0.38, "pala": 0.02, "cengkeh": 0.02, "jagung": 0.05, "padi": 0.02, "hutan": 0.31, "permukiman": 0.05, "air": 0.08, "lainnya": 0.07},
-    "PASIMASSUNGGU": {"kelapa": 0.34, "pala": 0.02, "cengkeh": 0.02, "jagung": 0.05, "padi": 0.02, "hutan": 0.35, "permukiman": 0.05, "air": 0.08, "lainnya": 0.07},
-    "PASIMASSUNGGU TIMUR": {"kelapa": 0.32, "pala": 0.02, "cengkeh": 0.02, "jagung": 0.05, "padi": 0.02, "hutan": 0.37, "permukiman": 0.05, "air": 0.08, "lainnya": 0.07},
-    "TAKABONERATE": {"kelapa": 0.20, "pala": 0.01, "cengkeh": 0.01, "jagung": 0.02, "padi": 0.01, "hutan": 0.35, "permukiman": 0.08, "air": 0.22, "lainnya": 0.10},
+    "BONTOMANAI": {"kelapa": 0.28, "hutan": 0.52, "permukiman": 0.08, "air": 0.04, "lainnya": 0.08},
+    "BONTOMATENE": {"kelapa": 0.27, "hutan": 0.53, "permukiman": 0.07, "air": 0.04, "lainnya": 0.09},
+    "BONTOSIKUYU": {"kelapa": 0.26, "hutan": 0.56, "permukiman": 0.06, "air": 0.04, "lainnya": 0.08},
+    "BONTOHARU": {"kelapa": 0.29, "hutan": 0.48, "permukiman": 0.10, "air": 0.04, "lainnya": 0.09},
+    "BENTENG": {"kelapa": 0.12, "hutan": 0.12, "permukiman": 0.62, "air": 0.06, "lainnya": 0.08},
+    "BUKI": {"kelapa": 0.26, "hutan": 0.54, "permukiman": 0.07, "air": 0.04, "lainnya": 0.09},
+    "PASILAMBENA": {"kelapa": 0.35, "hutan": 0.45, "permukiman": 0.06, "air": 0.05, "lainnya": 0.09},
+    "PASIMARANNU": {"kelapa": 0.36, "hutan": 0.44, "permukiman": 0.06, "air": 0.05, "lainnya": 0.09},
+    "PASIMASSUNGGU": {"kelapa": 0.33, "hutan": 0.47, "permukiman": 0.06, "air": 0.05, "lainnya": 0.09},
+    "PASIMASSUNGGU TIMUR": {"kelapa": 0.32, "hutan": 0.48, "permukiman": 0.06, "air": 0.05, "lainnya": 0.09},
+    "TAKABONERATE": {"kelapa": 0.22, "hutan": 0.38, "permukiman": 0.10, "air": 0.18, "lainnya": 0.12},
 }
 
 
@@ -72,6 +74,9 @@ def main():
     with open(PUB_DATA / "classes.json", encoding="utf-8") as f:
         classes = json.load(f)
 
+    class_ids = [c["id"] for c in classes]
+    other_keys = [c["id"] for c in classes if c["id"] != "kelapa"]
+
     desa_stats = {}
     kec_agg = {}
     kab_kelas = {c["id"]: 0.0 for c in classes}
@@ -99,25 +104,22 @@ def main():
             # Estimasi berbasis profil spektral kanopi kelapa Sentinel-2
             pred_kelapa = round(total_ha * profile["kelapa"], 1)
 
-        # 3. Alokasikan sisa luas ke kelas lainnya sesuai profil lanskap
+        # 3. Alokasikan sisa luas ke kelas tutupan lainnya (hutan, permukiman, air, lainnya)
         sisa_ha = max(0.0, total_ha - pred_kelapa)
-        other_keys = [c["id"] for c in classes if c["id"] != "kelapa"]
-        sum_other_weights = sum(profile.get(k, 0.05) for k in other_keys)
+        sum_other_weights = sum(profile.get(k, 0.1) for k in other_keys)
 
         kelas_luas = {"kelapa": pred_kelapa}
         for k in other_keys:
-            w = profile.get(k, 0.05) / sum_other_weights
+            w = profile.get(k, 0.1) / sum_other_weights
             kelas_luas[k] = round(sisa_ha * w, 1)
 
         # Koreksi selisih pembulatan
         diff = round(total_ha - sum(kelas_luas.values()), 1)
-        # Tambahkan ke kelas terbesar selain kelapa (hutan / permukiman)
         target_k = max(other_keys, key=lambda x: kelas_luas[x])
         kelas_luas[target_k] = round(kelas_luas[target_k] + diff, 1)
 
-        # Tentukan komoditas dominan
-        fokus_komoditas = ["kelapa", "pala", "cengkeh", "jagung", "padi"]
-        dominan = max(fokus_komoditas, key=lambda k: kelas_luas.get(k, 0.0))
+        # Tentukan tutupan dominan
+        dominan = max(kelas_luas, key=lambda k: kelas_luas[k])
 
         # Simpan ke statistik desa
         desa_stats[key_std] = {
@@ -147,8 +149,7 @@ def main():
     for nmkec, ka in kec_agg.items():
         ka["total_ha"] = round(ka["total_ha"], 1)
         ka["kelas"] = {k: round(v, 1) for k, v in ka["kelas"].items()}
-        fokus = ["kelapa", "pala", "cengkeh", "jagung", "padi"]
-        ka["dominan"] = max(fokus, key=lambda k: ka["kelas"][k])
+        ka["dominan"] = max(ka["kelas"], key=lambda k: ka["kelas"][k])
 
     # Finalisasi kabupaten
     kab_kelas = {k: round(v, 1) for k, v in kab_kelas.items()}
@@ -158,7 +159,9 @@ def main():
     print(f"Total Luas Daratan: {total_kab_ha:,.1f} ha")
     print(f"Total Luas Kelapa : {kab_kelas['kelapa']:,.1f} ha ({kab_kelas['kelapa']/total_kab_ha*100:.1f}%)")
     print(f"Hutan & Mangrove  : {kab_kelas['hutan']:,.1f} ha ({kab_kelas['hutan']/total_kab_ha*100:.1f}%)")
-    print(f"Cengkeh & Pala    : {kab_kelas['cengkeh'] + kab_kelas['pala']:,.1f} ha")
+    print(f"Permukiman        : {kab_kelas['permukiman']:,.1f} ha ({kab_kelas['permukiman']/total_kab_ha*100:.1f}%)")
+    print(f"Badan Air         : {kab_kelas['air']:,.1f} ha ({kab_kelas['air']/total_kab_ha*100:.1f}%)")
+    print(f"Lainnya           : {kab_kelas['lainnya']:,.1f} ha ({kab_kelas['lainnya']/total_kab_ha*100:.1f}%)")
 
     # Susun file stats.json baru
     new_stats = {
@@ -187,10 +190,10 @@ def main():
     # Sinkronisasi ke dist/data jika ada
     if DIST_DATA.exists():
         print("Sinkronisasi ke dist/data/...")
-        shutil.copy(PUB_DATA / "stats.json", DIST_DATA / "stats.json")
-        shutil.copy(PUB_DATA / "desa.geojson", DIST_DATA / "desa.geojson")
+        for name in ["stats.json", "desa.geojson", "classes.json"]:
+            shutil.copy2(PUB_DATA / name, DIST_DATA / name)
 
-    print("Selesai! Data berhasil diintegrasikan ke dashboard.")
+    print("Selesai memperbarui data statistik dashboard Gemerlap!")
 
 
 if __name__ == "__main__":

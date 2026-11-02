@@ -8,7 +8,7 @@ export default function App() {
   const [data, setData] = useState(null);
   const [err, setErr] = useState(null);
   const [level, setLevel] = useState('kecamatan');
-  const [focus, setFocus] = useState('dominan');
+  const [focus, setFocus] = useState('kelapa');
   const [basemap, setBasemap] = useState('satellite');
   const [split, setSplit] = useState(true);
   const [opacity, setOpacity] = useState(0.7);
