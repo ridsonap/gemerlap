@@ -15,8 +15,8 @@ const cleanBase = (import.meta.env.BASE_URL || '/').endsWith('/')
   : (import.meta.env.BASE_URL || '/') + '/';
 const SEGMENTATION_URL = `${cleanBase}data/segmentasi_selayar.png`;
 const SEGMENTATION_BOUNDS = [
-  [-7.322439, 120.282797],
-  [-5.422163, 121.283189]
+  [-7.530000, 120.270000],
+  [-5.730000, 121.850000]
 ];
 
 const tile = (url, attribution) => L.tileLayer(url, { maxZoom: 19, attribution });
