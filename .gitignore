@@ -3,5 +3,8 @@ dist
 .DS_Store
 .playwright-mcp
 Sen2_selayar_110726/
+/data/
+__pycache__/
+*.pyc
 *.tif
 *.aux.xml
