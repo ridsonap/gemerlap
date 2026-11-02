@@ -10,13 +10,22 @@ const GOOGLE_SAT = 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}';
 const GOOGLE_ROAD = 'https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}';
 const GOOGLE_TERRAIN = 'https://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}';
 
+const cleanBase = (import.meta.env.BASE_URL || '/').endsWith('/')
+  ? import.meta.env.BASE_URL || '/'
+  : (import.meta.env.BASE_URL || '/') + '/';
+const SEGMENTATION_URL = `${cleanBase}data/segmentasi_selayar.png`;
+const SEGMENTATION_BOUNDS = [
+  [-7.322439, 120.282797],
+  [-5.422163, 121.283189]
+];
+
 const tile = (url, attribution) => L.tileLayer(url, { maxZoom: 19, attribution });
 
 function classColor(stats, id) {
   return (stats.kelas.find((c) => c.id === id) || {}).color || '#999';
 }
 
-export default function MapView({ desa, kec, stats, level, opacity, split, basemap, focus, selected, onSelect, flyTo, resetTick }) {
+export default function MapView({ desa, kec, stats, level, opacity, split, basemap, focus, selected, onSelect, flyTo, resetTick, viewMode = 'segmentasi' }) {
   const boxRef = useRef(null);
   const mainDiv = useRef(null);
   const topWrapRef = useRef(null);
@@ -84,6 +93,16 @@ export default function MapView({ desa, kec, stats, level, opacity, split, basem
         terrain: tile(GOOGLE_TERRAIN, ''),
         osm: tile(OSM, ''),
       },
+      segMain: L.imageOverlay(SEGMENTATION_URL, SEGMENTATION_BOUNDS, {
+        pane: 'classification',
+        opacity,
+        interactive: false,
+      }),
+      segTop: L.imageOverlay(SEGMENTATION_URL, SEGMENTATION_BOUNDS, {
+        pane: 'classification',
+        opacity,
+        interactive: false,
+      }),
       classMain: L.geoJSON(null, { pane: 'classification' }),
       clickMain: L.geoJSON(null, { pane: 'clicks', style: { fillOpacity: 0, opacity: 0 } }),
       linesMain: L.geoJSON(null, { pane: 'lines' }),
@@ -171,6 +190,15 @@ export default function MapView({ desa, kec, stats, level, opacity, split, basem
     const styleClass = (f) => {
       const p = f.properties;
       const sel = isSel(p);
+      if (viewMode === 'segmentasi') {
+        return {
+          fillColor: sel ? '#10b981' : '#ffffff',
+          fillOpacity: sel ? 0.15 : 0.001,
+          color: sel ? '#10b981' : '#ffffff',
+          weight: sel ? 3.0 : (level === 'desa' ? 0.8 : 1.5),
+          opacity: sel ? 1 : 0.75,
+        };
+      }
       return {
         fillColor: fillOf(p),
         fillOpacity: sel ? Math.min(0.95, opacity + 0.2) : opacity,
@@ -215,8 +243,8 @@ export default function MapView({ desa, kec, stats, level, opacity, split, basem
         if (layer === M.classMain || layer === M.classTop) {
           lyr.setStyle({
             fillColor: '#f59e0b',
-            fillOpacity: Math.min(0.95, opacity + 0.25),
-            color: '#ffffff',
+            fillOpacity: viewMode === 'segmentasi' ? 0.15 : Math.min(0.95, opacity + 0.25),
+            color: '#f59e0b',
             weight: 2.8,
             opacity: 1,
           });
@@ -233,7 +261,7 @@ export default function MapView({ desa, kec, stats, level, opacity, split, basem
     bind(M.classMain);
     bind(M.classTop);
     bind(M.clickMain);
-  }, [desa, kec, stats, level, opacity, focus, selected]);
+  }, [desa, kec, stats, level, opacity, focus, selected, viewMode]);
 
   // ---- atur basemap + mode split ----
   useEffect(() => {
@@ -245,8 +273,8 @@ export default function MapView({ desa, kec, stats, level, opacity, split, basem
     Object.values(M.mainBase).forEach((l) => { if (main.hasLayer(l)) main.removeLayer(l); });
     Object.values(M.topBase).forEach((l) => { if (top.hasLayer(l)) top.removeLayer(l); });
 
-    [M.classMain, M.clickMain, M.linesMain].forEach((l) => { if (main.hasLayer(l)) main.removeLayer(l); });
-    [M.classTop, M.linesTop].forEach((l) => { if (top.hasLayer(l)) top.removeLayer(l); });
+    [M.classMain, M.clickMain, M.linesMain, M.segMain].forEach((l) => { if (l && main.hasLayer(l)) main.removeLayer(l); });
+    [M.classTop, M.linesTop, M.segTop].forEach((l) => { if (l && top.hasLayer(l)) top.removeLayer(l); });
 
     if (split) {
       // Split mode: kedua peta menggunakan basemap yang SAMA
@@ -257,6 +285,9 @@ export default function MapView({ desa, kec, stats, level, opacity, split, basem
 
       const activeTopBase = M.topBase[basemap] || M.topBase.satellite;
       activeTopBase.addTo(top);
+      if (viewMode === 'segmentasi') {
+        M.segTop.addTo(top);
+      }
       M.classTop.addTo(top);
       M.linesTop.addTo(top);
     } else {
@@ -264,6 +295,9 @@ export default function MapView({ desa, kec, stats, level, opacity, split, basem
       // Basemap pilihan + klasifikasi penuh
       const activeBase = M.mainBase[basemap] || M.mainBase.satellite;
       activeBase.addTo(main);
+      if (viewMode === 'segmentasi') {
+        M.segMain.addTo(main);
+      }
       M.classMain.addTo(main);
       M.linesMain.addTo(main);
     }
@@ -272,7 +306,15 @@ export default function MapView({ desa, kec, stats, level, opacity, split, basem
       try { main.invalidateSize(); } catch (_) {}
       try { top.invalidateSize(); } catch (_) {}
     }, 50);
-  }, [basemap, split, level]);
+  }, [basemap, split, level, viewMode]);
+
+  // Update opasitas segmentasi secara reaktif
+  useEffect(() => {
+    const M = maps.current;
+    if (!M.main) return;
+    if (M.segMain) M.segMain.setOpacity(opacity);
+    if (M.segTop) M.segTop.setOpacity(opacity);
+  }, [opacity]);
 
   // ---- navigasi ----
   useEffect(() => {

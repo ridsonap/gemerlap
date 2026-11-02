@@ -8,6 +8,7 @@ export default function App() {
   const [data, setData] = useState(null);
   const [err, setErr] = useState(null);
   const [level, setLevel] = useState('kecamatan');
+  const [viewMode, setViewMode] = useState('segmentasi'); // 'segmentasi' | 'choropleth'
   const [focus, setFocus] = useState('kelapa');
   const [basemap, setBasemap] = useState('satellite');
   const [split, setSplit] = useState(true);
@@ -122,6 +123,8 @@ export default function App() {
               <Sidebar
                 level={level}
                 setLevel={setLevel}
+                viewMode={viewMode}
+                setViewMode={setViewMode}
                 focus={focus}
                 setFocus={setFocus}
                 basemap={basemap}
@@ -183,6 +186,7 @@ export default function App() {
               kec={data.kec}
               stats={data.stats}
               level={level}
+              viewMode={viewMode}
               opacity={opacity}
               split={split}
               basemap={basemap}
@@ -202,7 +206,7 @@ export default function App() {
           {split && (
             <div className="pointer-events-none absolute left-1/2 top-3.5 z-10 flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-stone-200/60 bg-stone-900/85 p-1 text-[11px] font-semibold text-white shadow-xl backdrop-blur-md">
               <span className="rounded-full bg-emerald-600/90 px-2.5 py-0.5 text-white shadow-2xs">
-                Klasifikasi
+                {viewMode === 'segmentasi' ? 'Segmentasi Tutupan (10m)' : 'Choropleth Tematik'}
               </span>
               <span className="px-2 py-0.5 text-stone-300">
                 {basemap === 'satellite' ? 'Google Satelit' : basemap === 'roadmap' ? 'Google Roadmap' : basemap === 'terrain' ? 'Google Terrain' : 'OSM'}

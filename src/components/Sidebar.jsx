@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 
 export default function Sidebar({
-  level, setLevel, focus, setFocus, basemap, setBasemap,
+  level, setLevel, viewMode, setViewMode, focus, setFocus, basemap, setBasemap,
   split, setSplit, opacity, setOpacity, stats, onPick, onResetView,
   onCollapse,
 }) {
@@ -56,7 +56,46 @@ export default function Sidebar({
         )}
       </div>
 
-      {/* 2. LEVEL WILAYAH */}
+      {/* 2. MODE VISUALISASI PETA */}
+      <section>
+        <div className="flex items-center justify-between">
+          <h3 className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Mode Peta</h3>
+          <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
+            {viewMode === 'segmentasi' ? 'Pixel 10m' : 'Choropleth'}
+          </span>
+        </div>
+        <div className="mt-1.5 grid grid-cols-2 rounded-xl bg-stone-200/80 p-1">
+          <button
+            onClick={() => setViewMode('segmentasi')}
+            className={`flex items-center justify-center gap-1.5 rounded-lg py-1.5 text-xs font-semibold transition ${
+              viewMode === 'segmentasi'
+                ? 'bg-white text-emerald-800 shadow-2xs'
+                : 'text-stone-600 hover:text-stone-900'
+            }`}
+          >
+            <svg className="h-3.5 w-3.5 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            <span>Segmentasi</span>
+          </button>
+          <button
+            onClick={() => setViewMode('choropleth')}
+            className={`flex items-center justify-center gap-1.5 rounded-lg py-1.5 text-xs font-semibold transition ${
+              viewMode === 'choropleth'
+                ? 'bg-white text-emerald-800 shadow-2xs'
+                : 'text-stone-600 hover:text-stone-900'
+            }`}
+          >
+            <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" />
+            </svg>
+            <span>Choropleth</span>
+          </button>
+        </div>
+      </section>
+
+      {/* 3. LEVEL WILAYAH */}
       <section>
         <div className="flex items-center justify-between">
           <h3 className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Tampilan Batas</h3>
@@ -95,36 +134,62 @@ export default function Sidebar({
         </div>
       </section>
 
-      {/* 3. FOKUS PEWARNAAN / TEMATIK */}
-      <section>
-        <div className="flex items-center justify-between">
-          <h3 className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Pewarnaan Tematik</h3>
-          <span className="text-[10px] text-stone-400">Choropleth</span>
-        </div>
-        <div className="mt-1.5 relative">
-          <select
-            value={focus}
-            onChange={(e) => setFocus(e.target.value)}
-            className="w-full appearance-none rounded-xl border border-stone-200 bg-white py-2 pl-3 pr-8 text-xs font-semibold text-stone-800 shadow-2xs outline-none transition focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
-          >
-            {fokusOps.map((o) => (
-              <option key={o.id} value={o.id}>
-                {o.label}
-              </option>
-            ))}
-          </select>
-          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-stone-400">
-            <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
+      {/* 4. LEGENDA SEGMENTASI ATAU TEMATIK CHOROPLETH */}
+      {viewMode === 'segmentasi' ? (
+        <section className="rounded-xl border border-stone-200/80 bg-white p-2.5 shadow-2xs space-y-2">
+          <div className="flex items-center justify-between">
+            <h3 className="text-[10px] font-bold uppercase tracking-wider text-stone-500">Legenda Segmentasi (10m)</h3>
+            <span className="text-[9px] font-mono font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">Sentinel-2</span>
           </div>
-        </div>
-        <p className="mt-1 text-[11px] leading-snug text-stone-500">
-          {focus === 'dominan'
-            ? 'Poligon diwarnai sesuai kelas tutupan lahan terluas di wilayah.'
-            : `Gradasi intensitas luas ${fokusOps.find(o => o.id === focus)?.label || focus}.`}
-        </p>
-      </section>
+          <div className="space-y-1.5">
+            {[
+              { label: 'Pohon Kelapa', color: '#2f9e44', desc: 'Tajuk kelapa (Red Edge/SWIR)' },
+              { label: 'Permukiman/Bangunan', color: '#e8590c', desc: 'Atap rumah & infrastruktur (BSI)' },
+              { label: 'Hutan/Mangrove', color: '#14532d', desc: 'Kanopi hutan lebat & mangrove' },
+              { label: 'Badan Air', color: '#1971c2', desc: 'Tambak, muara, & danau (NDWI)' },
+              { label: 'Lahan Terbuka/Lainnya', color: '#f59e0b', desc: 'Tanah terbuka & pesisir pantai' },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center gap-2">
+                <span className="h-3 w-3 shrink-0 rounded" style={{ backgroundColor: item.color }} />
+                <div className="min-w-0 flex-1">
+                  <div className="text-[11px] font-bold text-stone-800 leading-tight">{item.label}</div>
+                  <div className="text-[9.5px] text-stone-400 leading-tight">{item.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : (
+        <section>
+          <div className="flex items-center justify-between">
+            <h3 className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Pewarnaan Tematik</h3>
+            <span className="text-[10px] text-stone-400">Choropleth</span>
+          </div>
+          <div className="mt-1.5 relative">
+            <select
+              value={focus}
+              onChange={(e) => setFocus(e.target.value)}
+              className="w-full appearance-none rounded-xl border border-stone-200 bg-white py-2 pl-3 pr-8 text-xs font-semibold text-stone-800 shadow-2xs outline-none transition focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+            >
+              {fokusOps.map((o) => (
+                <option key={o.id} value={o.id}>
+                  {o.label}
+                </option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-stone-400">
+              <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </div>
+          <p className="mt-1 text-[11px] leading-snug text-stone-500">
+            {focus === 'dominan'
+              ? 'Poligon diwarnai sesuai kelas tutupan lahan terluas di wilayah.'
+              : `Gradasi intensitas luas ${fokusOps.find(o => o.id === focus)?.label || focus}.`}
+          </p>
+        </section>
+      )}
 
       {/* 4. BASEMAP & PERBANDINGAN CITRA */}
       <section className="space-y-2.5">
