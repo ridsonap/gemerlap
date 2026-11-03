@@ -23,11 +23,21 @@ from sklearn.metrics import classification_report, confusion_matrix, f1_score, a
 from sklearn.model_selection import GridSearchCV, train_test_split
 
 
-def build_balanced_dataset(npz_path, samples_per_class=8000, seed=42):
-    print(f"Memuat dataset fitur: {npz_path}...")
-    data = np.load(npz_path)
-    X_all = data["features"]
-    fn = list(data["feature_names"])
+def build_balanced_dataset(npz_paths, samples_per_class=6000, seed=42):
+    if isinstance(npz_paths, (str, Path)):
+        npz_paths = [npz_paths]
+
+    X_list = []
+    fn = None
+    for p in npz_paths:
+        print(f"Memuat dataset fitur: {p}...")
+        data = np.load(p)
+        X_list.append(data["features"])
+        if fn is None:
+            fn = list(data["feature_names"])
+
+    X_all = np.vstack(X_list)
+    print(f"Total piksel gabungan: {len(X_all):,d} baris x {X_all.shape[1]} fitur")
 
     ndvi = X_all[:, fn.index("NDVI")]
     ndre1 = X_all[:, fn.index("NDRE1")]
@@ -40,20 +50,20 @@ def build_balanced_dataset(npz_path, samples_per_class=8000, seed=42):
     b12 = X_all[:, fn.index("B12")]
 
     # Definisi spektral target berdasarkan data lapangan & citra resolusi tinggi
-    # 0: Kelapa (NDVI tinggi sedang, NDRE khas, SWIR rendah-sedang, BSI negatif)
+    # 0: Kelapa (NDVI tinggi-sedang, NDRE khas kanopi kelapa, SWIR terkendali, BSI negatif)
     mask_kelapa = (
-        (ndvi >= 0.48) & (ndvi <= 0.82) &
-        (ndre1 >= 0.24) & (ndre1 <= 0.58) &
-        (b11 <= 0.22) & (bsi < -0.12) & (b04 < 0.07)
+        (ndvi >= 0.40) & (ndvi <= 0.85) &
+        (ndre1 >= 0.20) & (ndre1 <= 0.60) &
+        (b11 <= 0.25) & (bsi < -0.06) & (b04 <= 0.11)
     )
     # 1: Hutan / Mangrove (Kanopi sangat rapat, NDVI & NDRE sangat tinggi, red sangat rendah)
-    mask_hutan = (ndvi >= 0.78) & (ndre1 >= 0.48) & (b04 <= 0.045) & (bsi <= -0.25)
+    mask_hutan = (ndvi >= 0.74) & (ndre1 >= 0.45) & (b04 <= 0.050) & (bsi <= -0.22)
     # 2: Bangunan / Permukiman (BSI tinggi, NDVI rendah, refleksi merah & SWIR tinggi)
-    mask_bangunan = (bsi >= -0.02) & (ndvi < 0.32) & (b04 >= 0.08)
+    mask_bangunan = (bsi >= -0.02) & (ndvi < 0.35) & (b04 >= 0.075)
     # 3: Badan Air (NDWI positif, NIR sangat rendah)
-    mask_air = (ndwi >= 0.08) & (b08 <= 0.10)
-    # 4: Lahan Terbuka / Pasir Pantai (BSI tinggi, NDVI rendah-sedang)
-    mask_terbuka = (bsi >= -0.06) & (ndvi >= 0.12) & (ndvi < 0.38) & (b04 >= 0.06) & (~mask_bangunan)
+    mask_air = (ndwi >= 0.05) & (b08 <= 0.12)
+    # 4: Lahan Terbuka / Pasir Pantai (BSI tinggi, NDVI rendah, non-bangunan, non-air)
+    mask_terbuka = (bsi >= -0.04) & (ndvi < 0.35) & (~mask_bangunan) & (~mask_air)
 
     rng = np.random.RandomState(seed)
     masks = [mask_kelapa, mask_hutan, mask_bangunan, mask_air, mask_terbuka]
@@ -86,12 +96,15 @@ def build_balanced_dataset(npz_path, samples_per_class=8000, seed=42):
 
 def main():
     t_start = time.time()
-    npz_path = "data/processed/S2A_51MTN_20241027_0_L2A_features.npz"
+    npz_paths = [
+        "data/processed/S2A_51MTP_20241007_0_L2A_features.npz",
+        "data/processed/S2A_51MTN_20241027_0_L2A_features.npz",
+    ]
     out_dir = Path("data/processed")
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # 1. Dataset berimbang
-    X, y, feature_names, class_names = build_balanced_dataset(npz_path, samples_per_class=6000)
+    X, y, feature_names, class_names = build_balanced_dataset(npz_paths, samples_per_class=6000)
 
     # 2. Train-test split (75% train, 25% test berstrata)
     X_train, X_test, y_train, y_test = train_test_split(

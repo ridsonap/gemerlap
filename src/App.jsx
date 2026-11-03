@@ -11,7 +11,7 @@ export default function App() {
   const [viewMode, setViewMode] = useState('segmentasi'); // 'segmentasi' | 'choropleth'
   const [focus, setFocus] = useState('kelapa');
   const [basemap, setBasemap] = useState('satellite');
-  const [split, setSplit] = useState(true);
+  const [split, setSplit] = useState(false);
   const [opacity, setOpacity] = useState(0.7);
   const [selected, setSelected] = useState(null);
   const [flyTo, setFlyTo] = useState(null);

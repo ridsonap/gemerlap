@@ -95,64 +95,16 @@ def main():
     valid_m = desa_raster[rows_m, cols_m] > 0
     class_grid[rows_m[valid_m], cols_m[valid_m]] = preds_m[valid_m]
 
-    # 5. Predict Tile 51MTP (Daratan Utara)
+    # 5. Predict Tile 51MTP (Daratan Utara & Tengah)
     print("Memproses Tile 51MTP...")
-    mtp_dir = Path("data/sentinel2_selayar/S2A_51MTP_20241007_0_L2A")
-    with rasterio.open(mtp_dir / "SCL.tif") as src:
-        scl_p = src.read(1)
-    with rasterio.open(mtp_dir / "B04.tif") as src:
-        b04_p = src.read(1)
-        trans_10m = src.transform
-    with rasterio.open(mtp_dir / "B08.tif") as src:
-        b08_p = src.read(1)
-    with rasterio.open(mtp_dir / "B02.tif") as src:
-        b02_p = src.read(1)
-    with rasterio.open(mtp_dir / "B05.tif") as src:
-        b05_p = src.read(1)
-    with rasterio.open(mtp_dir / "B11.tif") as src:
-        b11_p = src.read(1)
+    data_mtp = np.load("data/processed/S2A_51MTP_20241007_0_L2A_features.npz")
+    X_p = data_mtp["features"]
+    lon_p = data_mtp["lon"]
+    lat_p = data_mtp["lat"]
 
-    step = 4
-    r_idx = np.arange(0, 10980, step)
-    c_idx = np.arange(0, 10980, step)
-    rg, cg = np.meshgrid(r_idx, c_idx, indexing="ij")
-    r_flat = rg.ravel()
-    c_flat = cg.ravel()
-
-    scl_sub = scl_p[r_flat // 2, c_flat // 2]
-    clear_mask = (scl_sub != 6) & (scl_sub != 0) & (~np.isin(scl_sub, [3, 8, 9, 10]))
-
-    r_val = r_flat[clear_mask]
-    c_val = c_flat[clear_mask]
-
-    x_utm_p = trans_10m.c + c_val * trans_10m.a
-    y_utm_p = trans_10m.f + r_val * trans_10m.e
-
-    t_wgs = Transformer.from_crs("EPSG:32751", "EPSG:4326", always_xy=True)
-    lon_p, lat_p = t_wgs.transform(x_utm_p, y_utm_p)
-
-    b04_val = b04_p[r_val, c_val].astype(np.float32) * 1e-4
-    b08_val = b08_p[r_val, c_val].astype(np.float32) * 1e-4
-    b02_val = b02_p[r_val, c_val].astype(np.float32) * 1e-4
-    b05_val = b05_p[r_val // 2, c_val // 2].astype(np.float32) * 1e-4
-    b11_val = b11_p[r_val // 2, c_val // 2].astype(np.float32) * 1e-4
-
-    eps = 1e-6
-    ndvi_val = (b08_val - b04_val) / (b08_val + b04_val + eps)
-    ndre1_val = (b08_val - b05_val) / (b08_val + b05_val + eps)
-    ndre2_val = ndre1_val
-    ndwi_val = (b02_val - b08_val) / (b02_val + b08_val + eps)
-    mndwi_val = (b02_val - b11_val) / (b02_val + b11_val + eps)
-    bsi_val = ((b11_val + b04_val) - (b08_val + b02_val)) / ((b11_val + b04_val) + (b08_val + b02_val) + eps)
-    evi_val = 2.5 * (b08_val - b04_val) / (b08_val + 6.0 * b04_val - 7.5 * b02_val + 1.0 + eps)
-    nbr2_val = np.zeros_like(b11_val)
-
-    X_p = np.column_stack([
-        b02_val, b02_val, b04_val, b05_val, b05_val, b05_val, b08_val, b08_val, b11_val, b11_val,
-        ndvi_val, ndre1_val, ndre2_val, ndwi_val, mndwi_val, bsi_val, evi_val, nbr2_val,
-    ])
-
-    preds_p = model.predict(X_p)
+    preds_p = np.zeros(len(X_p), dtype=np.uint8)
+    for i in range(0, len(X_p), batch_sz):
+        preds_p[i:i + batch_sz] = model.predict(X_p[i:i + batch_sz])
 
     cols_p, rows_p = inv_trans * (lon_p, lat_p)
     cols_p = np.clip(np.round(cols_p).astype(np.int32), 0, w_grid - 1)
